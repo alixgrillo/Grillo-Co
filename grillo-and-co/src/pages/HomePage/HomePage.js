@@ -14,6 +14,7 @@ import {
 import "./style.css";
 import { Link } from "react-router-dom";
 import Carousel from "../../components/Carousel/Carousel"
+import axios from "axios";
 
 class HomePage extends Component{
     constructor (){
@@ -23,6 +24,13 @@ class HomePage extends Component{
 
             ]
         }
+    }
+
+    componentDidMount(){
+        axios.get("/api/carousel").then(res => {
+            console.log(res.data);
+            this.setState({content: res.data});
+        });
     }
 
     render(){

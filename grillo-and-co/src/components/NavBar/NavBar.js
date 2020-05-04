@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import {
   Navbar,
   Nav,
@@ -17,45 +16,12 @@ import "./style.css";
 class NavbarComponent extends Component {
   constructor() {
     super();
-    this.state = {
-      logout: null
-      // redirectTo: null
-    };
-
-    this.logout = this.logout.bind(this);
+    
   }
 
-  logout(event) {
-    event.preventDefault();
-    console.log("logging out");
-    axios
-      .post("/user/logout")
-      .then(response => {
-        if (response.status === 200) {
-          this.props.updateUser({
-            loggedIn: false,
-            email: null,
-            userId: null,
-            tripID: null
-          });
-          //   this.setState({
-          //   redirectTo: '/login'
-          // })
-        }
-      })
-      .catch(error => {
-        console.log("Logout error");
-      });
-  }
+ 
 
   render() {
-    // if (this.state.redirectTo) {
-    //       return <Redirect to={{ pathname: this.state.redirectTo }} />
-    //   } else {
-
-    const loggedIn = this.props.loggedIn;
-    console.log("user login status: ", this.props.loggedIn);
-
     return (
       <div>
         <Container>
@@ -67,59 +33,31 @@ class NavbarComponent extends Component {
                 </Link>
               </NavItem>
               <NavItem>
-                <Link to={`/flightSearchPage`} className="nav-link">
-                  Flights
+                <Link to={`/gallery`} className="nav-link">
+                  Gallery
                 </Link>
               </NavItem>
               <NavItem>
-                <Link to={`/hotelSearchPage`} className="nav-link">
-                  Hotels
+                <Link to={`/aboutus`} className="nav-link">
+                  About Us
                 </Link>
               </NavItem>
-              {/* <NavItem>
-                  <Link to={`/#`} className="nav-link">Cars</Link>
-                </NavItem> */}
-              {/* <NavItem>
-                  <Link to={`/#`} className="nav-link">Things To Do</Link>
-                </NavItem> */}
-
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Account
-                </DropdownToggle>
-
-                {loggedIn ? (
-                  <DropdownMenu>
-                    <DropdownItem>
-                      <Link to={`/userpage`} className="nav-link-dark">
-                        My Trip
-                      </Link>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Link
-                        to={`/login`}
-                        className="nav-link-dark"
-                        onClick={this.logout}
-                      >
-                        Logout
-                      </Link>
-                    </DropdownItem>
-                  </DropdownMenu>
-                ) : (
-                  <DropdownMenu>
-                    <DropdownItem>
-                      <Link to={`/login`} className="nav-link-dark">
-                        Log In
-                      </Link>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Link to={`/createaccount`} className="nav-link-dark">
-                        Create Account
-                      </Link>
-                    </DropdownItem>
-                  </DropdownMenu>
-                )}
-              </UncontrolledDropdown>
+              <NavItem>
+                <Link to={`/faq`} className="nav-link">
+                  FAQ
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to={`/forsale`} className="nav-link">
+                  For Sale
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to={`/contactus`} className="nav-link">
+                  Contact Us
+                </Link>
+              </NavItem>
+             
             </Nav>
             {/* </Collapse> */}
           </Navbar>

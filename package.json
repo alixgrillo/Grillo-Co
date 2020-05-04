@@ -8,7 +8,7 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'grillo-and-co/*'\" \"npm run client\"",
     "client": "cd grillo-and-co && npm run start",
-    "seed": "node scripts/seedDB.js",
+    "seed": "node scripts/seedCarouselDB.js",
     "install": "cd grillo-and-co && npm install",
     "build": "cd grillo-and-co && npm run build",
     "heroku-postbuild": "npm run build",
@@ -29,7 +29,9 @@
   },
   "homepage": "https://github.com/alixgrillo/Grillo-Co#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "concurrently": "^5.2.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "mongoose": "^5.9.11",

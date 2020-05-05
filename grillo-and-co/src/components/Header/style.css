@@ -1,10 +1,13 @@
-.header-jumbo {
-    background-color: rgba(66, 66, 66, 0.74);
-    height: 6rem;
+h1, h2{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.header-jumbo, .jumbotron {
+    background-color: #2B2214;
+    height: auto;
 }
 
 .header {
-    font-family: 'Megrim', cursive;
     color: white;
     margin-top: -50px;
 }

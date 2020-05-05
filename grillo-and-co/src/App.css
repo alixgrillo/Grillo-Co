@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:wght@100');
+
+body{
+  font-family: 'Libre Franklin', sans-serif;
+}
 .App {
   text-align: center;
 }
@@ -14,7 +19,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #C2B8A0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

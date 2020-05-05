@@ -3,30 +3,21 @@ import {
   Navbar,
   Nav,
   NavItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  Container
+  Container,
+  NavbarBrand
 } from "reactstrap";
 // import { Redirect } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import "./style.css";
 
 class NavbarComponent extends Component {
-  constructor() {
-    super();
-    
-  }
-
- 
-
   render() {
     return (
       <div>
         <Container>
           <Navbar className="navbar" expand="sm">
             <Nav className="mr-auto nav" tabs>
+              <NavbarBrand>Grillo &amp; Co.</NavbarBrand>
               <NavItem>
                 <Link to={`/`} className="nav-link">
                   Home

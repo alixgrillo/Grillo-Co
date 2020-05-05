@@ -1,10 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
+import './style.css';
 
 const Carousel = (props) => {
 return (
-<Slider autoplay={3000}>
+<Slider autoplay={50000}>
 	{props.content.map((item, index) => (
 		<div
 			key={index}

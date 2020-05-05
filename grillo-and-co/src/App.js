@@ -14,13 +14,14 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavbarComponent></NavbarComponent>
-          <Header></Header>
+          {/* <Header></Header> */}
+          <br></br>
           <Switch>
             <Route
               path="/"
               render={()=> <HomePage></HomePage>}></Route>
           </Switch>
-         <Footer />\
+         <Footer />
          </div>
       </Router>
     );

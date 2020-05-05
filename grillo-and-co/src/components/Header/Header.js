@@ -8,7 +8,8 @@ export const Header = (props) => {
     <div>
     <Container>
       <Jumbotron className="header-jumbo">
-          <h1 className="display-2 text-center header">Welcome to Grillo &amp; Co. Fine Furniture Makers</h1>
+          <h1 className="display-2 text-center header">Welcome to Grillo &amp; Co.</h1>
+          <h2>Fine Furniture Makers</h2>
       </Jumbotron>
     </Container>
     </div>

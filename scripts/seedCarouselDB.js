@@ -5,17 +5,23 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/grilloco");
 
 const carouselSeed = [
   {
-    title: "Test Title",
-    image: "https://via.placeholder.com/468x60?text=About+Us+Picture", 
-    description: "This is a test description.",
+    title: "Grillo & Co - Coming Soon",
+    image: "http://rmfinewoodworking.com/wp-content/uploads/2019/08/Parquetry-Record-Credenza.jpeg", 
+    description: "Website Under Construction - Coming Soon",
     button: "About Us"
   },
   {
-    title: "Test Title 2",
-    image: "https://via.placeholder.com/468x60?text=Contact+Us+Picture", 
-    description: "This is another test description.",
+    title: "Grillo & Co - Coming Soon",
+    image: "http://rmfinewoodworking.com/wp-content/uploads/2019/03/Dovetails-and-Inlays-2.jpeg", 
+    description: "Website Under Construction - Coming Soon",
     button: "Contact Us"
-  }, 
+  },
+  {
+    title: "Grillo & Co - Coming Soon",
+    image: "http://rmfinewoodworking.com/wp-content/uploads/2019/03/Floating-Top-Console-Table-1.jpeg", 
+    description: "Website Under Construction - Coming Soon",
+    button: "Contact Us"
+  }
 
 ];
 

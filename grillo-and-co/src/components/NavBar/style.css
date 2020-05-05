@@ -1,6 +1,7 @@
 .navbar {
-    background-color: rgba(66, 66, 66, 0.74);
+    background-color: #C2B8A0;
     border-radius: 5px;
+    font-family: 'Libre Franklin', sans-serif;
 }
 
 .nav {
@@ -8,20 +9,18 @@
 }
 
 .nav-link {
-    color: rgb(255, 255, 255);
+    color: #2B2214;
     margin-left: 10px;
     margin-right: 10px;
-    font-family: 'Pontano Sans', sans-serif;
     font-size: 17px;
 }
 
 .nav-link:hover {
-    color: rgb(0, 0, 0);
+    color: #B4644C;
 }
 
 .nav-link-dark {
     color: rgb(0, 0, 0);
-    font-family: 'Pontano Sans', sans-serif;
     font-size: 17px;
 }
 

@@ -7,20 +7,20 @@ const carouselSeed = [
   {
     title: "Grillo & Co - Coming Soon",
     image: "http://rmfinewoodworking.com/wp-content/uploads/2019/08/Parquetry-Record-Credenza.jpeg", 
-    description: "Website Under Construction - Coming Soon",
+    description: "Website Under Construction",
     button: "About Us"
   },
   {
     title: "Grillo & Co - Coming Soon",
     image: "http://rmfinewoodworking.com/wp-content/uploads/2019/03/Dovetails-and-Inlays-2.jpeg", 
-    description: "Website Under Construction - Coming Soon",
+    description: "Fine Furniture Underway",
     button: "Contact Us"
   },
   {
     title: "Grillo & Co - Coming Soon",
-    image: "http://rmfinewoodworking.com/wp-content/uploads/2019/03/Floating-Top-Console-Table-1.jpeg", 
-    description: "Website Under Construction - Coming Soon",
-    button: "Contact Us"
+    image: "http://rmfinewoodworking.com/wp-content/uploads/2019/01/IMG_0450-2.jpg", 
+    description: "Website Under Construction",
+    button: "Gallery"
   }
 
 ];

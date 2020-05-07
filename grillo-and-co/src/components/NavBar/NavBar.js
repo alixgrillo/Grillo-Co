@@ -16,9 +16,9 @@ class NavbarComponent extends Component {
       <div>
         <Container>
           <Navbar className="navbar" expand="sm">
-            <Nav className="mr-auto nav" tabs>
-              <NavbarBrand>Grillo &amp; Co.</NavbarBrand>
-              <NavItem>
+            <Nav style={{marginLeft: "50px"}} className="mr-auto nav" tabs>
+              <NavbarBrand>Grillo &amp; Co</NavbarBrand>
+              {/* <NavItem>
                 <Link to={`/`} className="nav-link">
                   Home
                 </Link>
@@ -48,7 +48,7 @@ class NavbarComponent extends Component {
                   Contact Us
                 </Link>
               </NavItem>
-             
+              */}
             </Nav>
             {/* </Collapse> */}
           </Navbar>

@@ -8,7 +8,7 @@ const session = require("express-session");
 const dbConnection = require("./database");
 //const MongoStore = require("connect-mongo")(session);
 //const passport = require("./passport");
-//const path = require("path");
+const path = require("path");
 
 // Route requires
 //const user = require("./routes/user");

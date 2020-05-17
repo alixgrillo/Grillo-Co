@@ -37,6 +37,7 @@ class HomePage extends Component {
         <div className="carousel">
           <Carousel content={this.state.content}></Carousel>
         </div>
+        
       </Container>
     );
   }

@@ -12,7 +12,7 @@ export const Footer = (props) => {
             <Col md={4}>
               <FontAwesome
                 name="mobile-alt"
-                size="md"
+                size="lg"
                 style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
               />{" "}
               Phone Number: 814.598.2993
@@ -20,7 +20,7 @@ export const Footer = (props) => {
             <Col md={4}>
               <FontAwesome
                 name="envelope"
-                size="md"
+                size="lg"
                 style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
               />{" "}
               Email: john@grilloandco.com

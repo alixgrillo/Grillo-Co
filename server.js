@@ -9,10 +9,12 @@ const dbConnection = require("./database");
 //const MongoStore = require("connect-mongo")(session);
 //const passport = require("./passport");
 const path = require("path");
+var multer = require('multer');
 
 // Route requires
 //const user = require("./routes/user");
 const apiRoutes = require("./routes/apiRoutes");
+const apiFileUpload = require("./routes/apiFileUpload");
 
 const app = express();
 const cors = require("cors");
@@ -36,26 +38,12 @@ if (process.env.NODE_ENV === "production") {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Passport
-// app.use(passport.initialize());
-// app.use(passport.session());
 
-// Session to keep track of the login credentials
-// app.use(
-//   session({
-//     secret: "tootsie-roll", // random string to make the hash that is generated secure
-//     store: new MongoStore({ mongooseConnection: dbConnection }),
-//     resave: false, //required
-//     saveUninitialized: false //required
-//   })
-// );
-
-// Add routes, both API and view
-// app.use("/user", user);
 app.use("/api", apiRoutes);
 
 // Routes
-//require("./routes/apiRoutes")(app);
+require("./routes/apiFileUpload")(app, multer);
+
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/grilloco", {

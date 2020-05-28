@@ -1,44 +1,25 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import {
-  Col,
-  Row,
-  Button,
-  Form,
-  FormGroup,
-  Label,
-  Input,
+
   Container,
-  Card,
-  CardHeader,
-  CardBody,
-  FormText,
 } from "reactstrap";
 import "./style.css";
-import ContactForm from "../../components/ContactForm/ContactForm";
+import UploadPhotoForm from "../../components/UploadPhotoForm/UploadPhotoForm";
+import GalleryCard from "../../components/GalleryCard/GalleryCard";
+import GalleryDND from "../../components/GalleryDND/GalleryDND";
 import axios from "axios";
 
 class Admin extends Component {
   constructor() {
     super();
     this.state = {
-      selectedFile: null,
-      title: null,
-      description: null,
-      keyword: null
+      savedPhotos: []
     };
   }
 
   componentDidMount() {
-    console.log("HELLO!");
+    this.getPhotos();
   }
-
-  onChangeHandler = (event) => {
-    this.setState({
-      selectedFile: event.target.files[0],
-      loaded: 0,
-    });
-  };
 
   
   handleInputChange = event => {
@@ -52,35 +33,12 @@ class Admin extends Component {
     });
   };
 
-  onClickHandler = (event) => {
-    event.preventDefault();
-    const data = new FormData();
-    console.log(this.state);
-    data.append("file", this.state.selectedFile);
-    axios
-      .post("/upload", data, {
-        // receive two parameter endpoint url ,form data
-      })
-      .then((res) => {
-        // then print response status
-        console.log(res.statusText);
-      });
-    this.updateDB(this.state);
-  };
+  getPhotos = () => {
+    this.dbGet(`/api/adminSavedPhoto`).then(response => this.setState({savedPhotos: response.data}));
+  }
 
-  updateDB = (state) => {
-    // POST request using fetch inside useEffect React hook
-    const requestOptions = {
-      title: state.title,
-      description: state.description,
-      keyword: state.keyword,
-      photoInfo: {name: state.selectedFile.name}
-    };
-    this.db(requestOptions).then(data => console.log(data));
-    // empty dependency array means this effect will only run once (like componentDidMount in classes)
-  };
-  db = async (requestOptions) => {
-    const response = await axios.post(`/api/adminSavedPhoto`, requestOptions);
+  dbGet = async (url) => {
+    const response = await axios.get(url);
     const body = await response;
     if (response.status !== 200) {
       throw Error(body.message);
@@ -93,55 +51,14 @@ class Admin extends Component {
       <Container>
         <h1>Admin</h1>
         <h2>Add a Photo</h2>
-        <Form>
-          <FormGroup>
-            <Label for="title">Photo Title</Label>
-            <Input
-              type="text"
-              value={this.state.title}
-              onChange={this.handleInputChange}
-              name="title"
-              id="title"
-              placeholder="Display Title for Photo"
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="description">Photo Description</Label>
-            <Input
-              type="text"
-              value={this.state.description}
-              onChange={this.handleInputChange}
-              name="description"
-              id="description"
-              placeholder="Display Text for Photo"
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="keyword">Keywords</Label>
-            <Input
-              type="text"
-              value={this.state.keyword}
-              onChange={this.handleInputChange}
-              name="keyword"
-              id="keyword"
-              placeholder="Keywords associated with photo"
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="exampleFile">File</Label>
-            <Input
-              type="file"
-              name="file"
-              id="exampleFile"
-              onChange={this.onChangeHandler}
-            />
-            <FormText color="muted">
-              This is some placeholder block-level help text for the above
-              input. It's a bit lighter and easily wraps to a new line.
-            </FormText>
-          </FormGroup>
-          <Button type="submit" onClick={this.onClickHandler}>Submit</Button>
-        </Form>
+        <UploadPhotoForm />
+        <h3>Saved Photos</h3>
+        {this.state.savedPhotos.map((photo, index) => (
+        <GalleryCard photo={photo} key={index}></GalleryCard>
+        ))}
+        <h3>Assets for Pages</h3>
+        <h3>Gallery Ordering</h3>
+        <GalleryDND />
       </Container>
     );
   }

@@ -7,16 +7,14 @@ module.exports = function (app, multer) {
         cb(null, 'grillo-and-co/src/images')
       },
       filename: function (req, file, cb) {
-        cb(null, Date.now() + '-' +file.originalname )
+       //cb(null, Date.now() + '-' +file.originalname )
+       cb(null, file.originalname )
       }
       })
       
       var upload = multer({ storage: storage }).single('file');
       
-      // app.use("/apiFile/upload", apiFileUpload)(app, upload);
-      
       app.post('/upload',function(req, res) {
-          //  console.log(req);
         upload(req, res, function (err) {
           console.log(err);
                if (err instanceof multer.MulterError) {

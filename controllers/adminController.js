@@ -7,7 +7,6 @@ module.exports = {
         .catch((err) => res.status(422).json(err));
     },
     savePhoto: (req, res) => {
-      console.log(db);
       db.AdminSavedPhoto.create(req.body)
         .then((dbModel) => res.json(dbModel))
         .catch((err) => res.status(422).json(err));

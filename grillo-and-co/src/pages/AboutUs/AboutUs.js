@@ -1,20 +1,11 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+
 import {
-  Button,
-  Form,
-  FormGroup,
-  Label,
-  Input,
+
   Container,
-  Card,
-  CardHeader,
-  CardBody,
+
 } from "reactstrap";
 import "./style.css";
-import { Link } from "react-router-dom";
-import Carousel from "../../components/Carousel/Carousel";
-import axios from "axios";
 
 class AboutUs extends Component {
   constructor() {
@@ -25,14 +16,14 @@ class AboutUs extends Component {
   }
 
   componentDidMount() {
-    console.log("HELLO!");
+
   }
 
   render() {
     return (
       <Container>
         <h1>About Us</h1>
-        <img href="https://via.placeholder.com/728x90.png"></img>
+        {/* <img href="https://via.placeholder.com/728x90.png"></img> */}
         <h2>Our Story</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut quam mattis, suscipit augue eu, finibus lectus. Mauris fringilla lectus quis magna luctus lobortis. Phasellus gravida nisl a nibh egestas cursus. Etiam sed ultrices ligula. Fusce scelerisque nulla id elit varius, quis ultricies sem vehicula. Vivamus eu convallis ex. Donec eleifend nec arcu nec imperdiet. Praesent elit justo, fermentum ut placerat quis, congue a mauris. Nulla scelerisque leo dapibus ligula pretium, non imperdiet orci maximus. Nunc fermentum ipsum at semper porta. Morbi a iaculis lectus. Aenean varius vehicula dui a ultrices. Nulla cursus fringilla posuere. Phasellus a nibh nec magna dictum bibendum. Sed id ipsum consectetur dolor accumsan condimentum a vel erat. Vestibulum cursus cursus condimentum.
 

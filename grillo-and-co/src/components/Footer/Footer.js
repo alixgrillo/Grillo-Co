@@ -26,7 +26,7 @@ export const Footer = (props) => {
               Email: john@grilloandco.com
             </Col>
             <Col md={4}>
-              <a href="http://www.instagram.com/grilloandco/" target="_blank">
+              <a href="http://www.instagram.com/grilloandco/" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-instagram"></i>{" "}
                 Visit Us{" "}
               </a>

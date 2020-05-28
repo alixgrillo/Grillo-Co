@@ -35,7 +35,7 @@ return (
 			<div className="center">
 				<h1 style={h1}>{item.title}</h1>
 				<p style={p}>{item.description}</p>
-				{/* <button style={button}>{item.button}</button> */}
+				<button style={button}>{item.button}</button>
 			</div>
 		</div>
 	))}

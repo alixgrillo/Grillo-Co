@@ -1,17 +1,10 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+
 import {
     Col,
     Row,
-  Button,
-  Form,
-  FormGroup,
-  Label,
-  Input,
+
   Container,
-  Card,
-  CardHeader,
-  CardBody,
 } from "reactstrap";
 import "./style.css";
 import ContactForm from "../../components/ContactForm/ContactForm";

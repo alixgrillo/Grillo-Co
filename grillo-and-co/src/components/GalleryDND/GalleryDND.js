@@ -57,6 +57,7 @@ class GalleryDND extends Component {
         <img
           className="image"
           src={require(`../../images/${item.photoInfo.name}`)}
+          alt={item.keyword}
         ></img>
         <div className="small">
           item.id: {item.id} - index: {index}

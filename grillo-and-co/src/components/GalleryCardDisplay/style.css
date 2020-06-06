@@ -1,0 +1,30 @@
+.gallery-image, .card-img{
+    transition: transform 2s ease;
+    opacity: 1;
+    border-radius: 0;
+}
+
+.gallery-image:hover{
+    transition: transform 2s ease;
+    transform: scale(1.1);
+}
+.gallery-card{
+    border:none;
+    width: 100%;
+    float: left;
+    border-radius: 0%;
+    padding: 10px;
+}
+.gallery-title{
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 2px;
+}
+.gallery-description{
+    font-style: italic;
+    text-align: left;
+    font-size: small;
+}
+.picture-modal{
+    min-width: 60%;
+}

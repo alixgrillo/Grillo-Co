@@ -11,6 +11,7 @@ import Gallery from "./pages/Gallery/Gallery";
 import Admin from "./pages/Admin/Admin";
 import Footer from "./components/Footer/Footer";
 import NavbarComponent from "./components/NavBar/NavBar";
+import FAQ from "./pages/FAQ/FAQ";
 
 
 class App extends Component {
@@ -32,6 +33,9 @@ class App extends Component {
                <Route
               path="/contactus"
               render={()=> <Contact></Contact>}></Route>
+                <Route
+              path="/faq"
+              render={()=> <FAQ></FAQ>}></Route>
               <Route
               exact path="/admin"
               render={()=> <Admin></Admin>}></Route>

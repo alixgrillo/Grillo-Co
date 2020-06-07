@@ -1,66 +1,66 @@
 .navbar {
-    background-color: #C2B8A0;
-    border-radius: 5px;
-    font-family: 'Libre Franklin', sans-serif;
+  /* background-color: #C2B8A0; */
+  border-radius: 0px;
+  font-family: "Libre Franklin", sans-serif;
 }
 
 .nav {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .nav-link {
-    color: #2B2214;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 17px;
+  color: #2b2214;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 17px;
+  float: right;
 }
 
 .nav-link:hover {
-    color: #B4644C;
+  color: #b4644c;
 }
 
 .nav-link-dark {
-    color: rgb(0, 0, 0);
-    font-size: 17px;
+  color: rgb(0, 0, 0);
+  font-size: 17px;
 }
 
 .nav-link-dark:hover {
-    color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
+@media screen and (max-width: 470px) {
+  .nav-link {
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 16px;
+  }
 
-@media screen and (max-width:470px) {
-    .nav-link {
-        margin-left: 0px;
-        margin-right: 0px;
-        font-size: 16px;
-    }
-
-    .nav-link-dark {
-        font-size: 16px;
-    }
+  .nav-link-dark {
+    font-size: 16px;
+  }
 }
 
-@media screen and (max-width:376px) {
-    .nav-link {
-        margin-left: -4px;
-        margin-right: -4px;
-        font-size: 16px;
-    }
+@media screen and (max-width: 376px) {
+  .nav-link {
+    margin-left: -4px;
+    margin-right: -4px;
+    font-size: 16px;
+  }
 
-    .nav-link-dark {
-        font-size: 16px;
-    }
+  .nav-link-dark {
+    font-size: 16px;
+  }
 }
 
-@media screen and (max-width:360px) {
-    .nav-link {
-        margin-left: -5px;
-        margin-right: -5px;
-        font-size: 16px;
-    }
+@media screen and (max-width: 360px) {
+  .nav-link {
+    margin-left: -5px;
+    margin-right: -5px;
+    font-size: 16px;
+  }
 
-    .nav-link-dark {
-        font-size: 15px;
-    }
+  .nav-link-dark {
+    font-size: 15px;
+  }
 }

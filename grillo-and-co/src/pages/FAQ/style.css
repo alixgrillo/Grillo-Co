@@ -1,0 +1,22 @@
+hr {
+  display: block;
+  white-space: pre-line;
+  border: 0.25px solid gray;
+  width: 25%;
+  float: left;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+  margin-left: 0;
+}
+h3 {
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 28px;
+}
+p {
+  text-align: left;
+}

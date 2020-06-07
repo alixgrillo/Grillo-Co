@@ -45,10 +45,9 @@ class Gallery extends Component {
         <div className="gallery-cards">
           <Row>
             {this.state.galleryPhotos.map((photo, index) => (
-              <Col lg={4}>
+              <Col lg={4} key={index}>
                 <GalleryCardDisplay
                   photo={photo}
-                  key={index}
                 ></GalleryCardDisplay>
               </Col>
             ))}

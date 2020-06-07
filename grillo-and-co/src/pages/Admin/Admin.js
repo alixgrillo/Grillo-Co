@@ -46,7 +46,7 @@ class Admin extends Component {
 
   render() {
     return (
-      <Container>
+      <Container style={{marginBottom: "100px"}}>
         <h1>Admin</h1>
         <Row>
           <h2>Add a Photo</h2>

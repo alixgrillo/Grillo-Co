@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 
-import {
-
-  Container,
-
-} from "reactstrap";
+import { Container } from "reactstrap";
 import "./style.css";
 
 class AboutUs extends Component {
@@ -15,9 +11,7 @@ class AboutUs extends Component {
     };
   }
 
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
 
   render() {
     return (
@@ -25,15 +19,33 @@ class AboutUs extends Component {
         <h1>About Us</h1>
         {/* <img href="https://via.placeholder.com/728x90.png"></img> */}
         <h2>Our Story</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut quam mattis, suscipit augue eu, finibus lectus. Mauris fringilla lectus quis magna luctus lobortis. Phasellus gravida nisl a nibh egestas cursus. Etiam sed ultrices ligula. Fusce scelerisque nulla id elit varius, quis ultricies sem vehicula. Vivamus eu convallis ex. Donec eleifend nec arcu nec imperdiet. Praesent elit justo, fermentum ut placerat quis, congue a mauris. Nulla scelerisque leo dapibus ligula pretium, non imperdiet orci maximus. Nunc fermentum ipsum at semper porta. Morbi a iaculis lectus. Aenean varius vehicula dui a ultrices. Nulla cursus fringilla posuere. Phasellus a nibh nec magna dictum bibendum. Sed id ipsum consectetur dolor accumsan condimentum a vel erat. Vestibulum cursus cursus condimentum.
-
-Aenean dictum nec turpis vitae tincidunt. Proin rhoncus posuere nisi, a dignissim dolor eleifend quis. Proin feugiat consectetur justo. Phasellus odio turpis, vehicula quis nisl ac, dictum consectetur libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque eu quam ex. Ut massa ex, fringilla non fermentum ac, sodales eget nulla. Aliquam congue auctor eros, eget molestie arcu lobortis at. Mauris eleifend odio ex, ut tristique lectus varius eget. Vivamus at metus in ipsum viverra pretium tempor nec sem. Etiam vulputate urna commodo ultrices fermentum.
-
-Sed ut eleifend augue. Proin euismod orci erat, id tincidunt leo lobortis eu. Quisque ac elit elementum, hendrerit quam quis, pellentesque dui. Nam a fermentum mauris, ut consectetur metus. Integer dignissim in orci interdum consequat. Duis facilisis ac arcu a tempor. Ut lacus enim, condimentum at consectetur sollicitudin, tristique a nunc. Suspendisse at nibh augue. Aliquam volutpat placerat libero ut posuere. Ut pharetra non leo eget aliquam. Proin nec dapibus ex, non hendrerit quam.
-
-Curabitur eros massa, maximus id quam nec, tincidunt sodales odio. Donec rutrum lectus sagittis neque pulvinar euismod. Aenean porta vestibulum laoreet. Phasellus efficitur velit eu nunc tincidunt, vel semper nisl posuere. Proin lacinia lacinia tellus vitae cursus. Morbi tristique lorem id efficitur posuere. Sed quam lacus, sollicitudin non enim ac, blandit dictum nulla. In lacinia felis at mi maximus vestibulum.
-
-Suspendisse potenti. In mollis gravida urna non euismod. Integer sagittis vel eros sit amet sollicitudin. Suspendisse efficitur id magna at sodales. Praesent faucibus pretium mi, eget scelerisque orci scelerisque nec. Quisque vitae arcu non lacus fermentum convallis. Donec ante massa, facilisis eu augue vitae, vulputate feugiat turpis.</p>
+        <p>
+          Owner John Grillo trained at the world renowned Thomas Chippendale
+          International School of Furniture near Edinburgh, Scotland. While
+          studying there he was featured in Furniture & Cabinetmaking Magazine,
+          The Scottish Times, and Scottish Craftsmanship for his outstanding
+          work.
+        </p>
+        <p>
+          He also received the prestigious Richard Demarco Prize, awarded by the
+          celebrated arts commentator to the student whose work not only
+          displays design and woodworking skill but exceptional artistic talent.
+          The prize was specifically awarded for John’s round dining table, made
+          from some 40 pieces of intricately-cut walnut, with a dozen pieces of
+          pepperwood veneer to form a simple, flowing yet geometrically-complex
+          design.
+        </p>
+        <blockquote>
+          “It is a piece of furniture that displays real skill but which, like a
+          painting or piece of sculpture, transcends craftsmanship and design to
+          become genuine art”, Demarco said.
+        </blockquote>
+        <p>
+          A graduate of the Chippendale School and a member of the Fine
+          Furniture Guild, John combines contemporary and traditional skills,
+          high-quality materials, and his exceptional design talent to create
+          beautiful free standing pieces of bespoke furniture.
+        </p>
       </Container>
     );
   }

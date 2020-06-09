@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { Container, Row } from "reactstrap";
+import {
+  Container,
+  Row,
+  FormGroup,
+  Label,
+  CustomInput,
+  Form,
+  Button,
+} from "reactstrap";
 import "./style.css";
 import UploadPhotoForm from "../../components/UploadPhotoForm/UploadPhotoForm";
 import GalleryCard from "../../components/GalleryCard/GalleryCard";
@@ -11,6 +19,7 @@ class Admin extends Component {
     super();
     this.state = {
       savedPhotos: [],
+      aboutUsPhoto: "",
     };
   }
 
@@ -27,12 +36,39 @@ class Admin extends Component {
     this.setState({
       [name]: value,
     });
+    console.log(value, name);
   };
 
+  onClickHandler = (event) => {
+    event.preventDefault();
+    this.updateDB(this.state);
+  };
   getPhotos = () => {
     this.dbGet(`/api/adminSavedPhoto`).then((response) =>
-      this.setState({ savedPhotos: response.data.sort((a, b) => (a.galleryOrder > b.galleryOrder) ? 1 : -1) })
+      this.setState({
+        savedPhotos: response.data.sort((a, b) =>
+          a.galleryOrder > b.galleryOrder ? 1 : -1
+        ),
+      })
     );
+    this.dbGet(`/api/other`).then((response) => {
+      console.log(response.data);
+      this.setState(
+        {
+          aboutUsPhoto: response.data[0].aboutUsPhoto,
+        },
+        console.log(this.state)
+      );
+    });
+  };
+  updateDB = (state) => {
+    // POST request using fetch inside useEffect React hook
+    const requestOptions = {
+      aboutUsPhoto: state.aboutUsPhoto,
+    };
+    console.log(state.aboutUsPhoto);
+    this.dbPut(requestOptions).then((data) => console.log(data));
+    // empty dependency array means this effect will only run once (like componentDidMount in classes)
   };
 
   dbGet = async (url) => {
@@ -43,13 +79,21 @@ class Admin extends Component {
     }
     return body;
   };
+  dbPut = async (requestOptions) => {
+    const response = await axios.post(`/api/other`, requestOptions);
+    const body = await response;
+    if (response.status !== 200) {
+      throw Error(body.message);
+    }
+    return body;
+  };
 
   render() {
     return (
-      <Container style={{marginBottom: "100px"}}>
+      <Container style={{ marginBottom: "100px" }}>
         <h1>Admin</h1>
         <Row>
-          <h2>Add a Photo</h2>
+          <h3>Add a Photo</h3>
           <UploadPhotoForm />
         </Row>
         <Row>
@@ -60,6 +104,28 @@ class Admin extends Component {
         </Row>
         <Row>
           <h3>Assets for Pages</h3>
+          <Form>
+            <FormGroup>
+              <Label for="exampleCustomSelect">About Us Picture</Label>
+              <CustomInput
+                type="select"
+                id="exampleCustomSelect"
+                name="aboutUsPhoto"
+                onChange={this.handleInputChange}
+                value={this.state.aboutUsPhoto}
+              >
+                <option value="">Select</option>
+                {this.state.savedPhotos.map((photo, index) => (
+                  <option key={index}>
+                    {photo.title} : {photo.photoInfo.name}
+                  </option>
+                ))}
+              </CustomInput>
+            </FormGroup>
+            <Button type="submit" onClick={this.onClickHandler}>
+              Save
+            </Button>
+          </Form>
         </Row>
         <Row>
           <h3>Gallery Ordering</h3>

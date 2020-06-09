@@ -1,24 +1,52 @@
 import React, { Component } from "react";
 
-import { Container } from "reactstrap";
+import { Container, CardImg } from "reactstrap";
+import axios from "axios";
 import "./style.css";
 
 class AboutUs extends Component {
   constructor() {
     super();
     this.state = {
-      content: [],
+      aboutUsPhoto: "0011- Alix and John's Wedding Photos.jpg",
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.getPhoto();
+  }
+
+  getPhoto = () => {
+    this.dbGet(`/api/other`).then((response) => {
+      console.log(response.data[0].aboutUsPhoto.split(": ")[1]);
+      this.setState(
+        {
+          aboutUsPhoto: response.data[0].aboutUsPhoto.split(": ")[1],
+        },
+        console.log(this.state)
+      );
+    });
+  };
+
+  dbGet = async (url) => {
+    const response = await axios.get(url);
+    const body = await response;
+    if (response.status !== 200) {
+      throw Error(body.message);
+    }
+    return body;
+  };
 
   render() {
     return (
-      <Container>
+      <Container style={{ marginBottom: "100px" }}>
         <h1>About Us</h1>
-        {/* <img href="https://via.placeholder.com/728x90.png"></img> */}
+        <CardImg
+          className="about-us-photo"
+          src={require(`../../images/${this.state.aboutUsPhoto}`)}
+        />
         <h2>Our Story</h2>
+        {/* <img src={require(`../../images/${this.state.aboutUsPhoto}`)}></img> */}
         <p>
           Owner John Grillo trained at the world renowned Thomas Chippendale
           International School of Furniture near Edinburgh, Scotland. While

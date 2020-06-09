@@ -1,5 +1,5 @@
 module.exports = {
-    Carousel: require("./carousel"),
-    AdminSavedPhoto: require("./adminSavedPhoto")
-   
+  Carousel: require("./carousel"),
+  AdminSavedPhoto: require("./adminSavedPhoto"),
+  OtherPages: require("./otherPages"),
 };

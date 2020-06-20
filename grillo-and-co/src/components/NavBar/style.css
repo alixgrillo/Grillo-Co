@@ -1,7 +1,7 @@
 .navbar {
   /* background-color: #C2B8A0; */
   border-radius: 0px;
-  font-family: "Libre Franklin", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .nav {
@@ -14,19 +14,23 @@
   margin-right: 10px;
   font-size: 17px;
   float: right;
+  /* margin-top: 30px; */
+}
+.nav-tabs {
+  border-bottom: none;
 }
 
 .nav-link:hover {
-  color: #b4644c;
+  color: #75645b;
 }
 
 .nav-link-dark {
-  color: rgb(0, 0, 0);
+  color: #2a110e;
   font-size: 17px;
 }
 
 .nav-link-dark:hover {
-  color: rgb(0, 0, 0);
+  color: #2a110e;
 }
 
 @media screen and (max-width: 470px) {

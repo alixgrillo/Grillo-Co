@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:wght@100');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=PT+Sans:wght@400;700&family=Roboto:wght@500&display=swa");
 
-body{
-  font-family: 'Libre Franklin', sans-serif;
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif;*/
+
+body {
+  font-family: "Montserrat", sans-serif;
 }
 .App {
   text-align: center;
@@ -19,7 +22,7 @@ body{
 }
 
 .App-header {
-  background-color: #C2B8A0;
+  background-color: #c2b8a0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -30,7 +33,7 @@ body{
 }
 
 .App-link {
-  color: #61dafb;
+  color: #3b160c;
 }
 
 @keyframes App-logo-spin {

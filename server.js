@@ -1,5 +1,6 @@
 //require(`dotenv`).config({ path: './client' });
-//require("dotenv").config();
+require("dotenv").config();
+require(`dotenv`).config({ path: "./" });
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -9,7 +10,7 @@ const dbConnection = require("./database");
 //const MongoStore = require("connect-mongo")(session);
 //const passport = require("./passport");
 const path = require("path");
-var multer = require('multer');
+var multer = require("multer");
 
 // Route requires
 //const user = require("./routes/user");
@@ -38,20 +39,19 @@ if (process.env.NODE_ENV === "production") {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
 app.use("/api", apiRoutes);
 
 // Routes
 require("./routes/apiFileUpload")(app, multer);
-
+require("./routes/emailRoute")(app);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/grilloco", {
-  useNewUrlParser: true
+  useNewUrlParser: true,
 });
 
 // Start the API server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(
     `🌎  ==> API Server now listening on PORT ${PORT}! ${process.env.MONGODB_URI}`
   );

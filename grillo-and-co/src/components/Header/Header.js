@@ -1,28 +1,36 @@
-import React from 'react';
-import { Jumbotron, Container } from 'reactstrap';
-import './style.css';
+import React from "react";
+import { Jumbotron, Container } from "reactstrap";
+import "./style.css";
 
 const header = {
-  backgroundColor: "transparent",
-  padding: "70px 0 0 0"
-}
+  // backgroundColor: "transparent",
+  padding: "20px 0 0 0",
+};
 const h1 = {
-  color: "#2B2214",
-  textShadow: "none"
-}
+  color: "#2A110E",
+  textShadow: "none",
+};
 
 export const Header = (props) => {
   return (
     <div>
-    <Container>
+      {/* <Container> */}
       <Jumbotron style={header} className="header-jumbo">
-          <h1 style={h1} className="display-2 text-center header">Grillo &amp; Co</h1>
-          <h2>Fine Furniture Makers</h2>
+        {/* <h1 style={h1} className="display-2 text-center header">
+            Grillo &amp; Co
+          </h1>
+          <h2>Bespoke Furniture</h2> */}
+        <img
+          src="/Grillo&Co_Logo_2020_BrandGuidelines_Line_Logo_Tagline_White.png"
+          width="300"
+          height="auto"
+          className="logo"
+          alt="Grillo and Co Bespoke Furniture"
+        />
       </Jumbotron>
-    </Container>
+      {/* </Container> */}
     </div>
   );
 };
-
 
 export default Header;

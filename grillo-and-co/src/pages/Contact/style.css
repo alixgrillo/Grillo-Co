@@ -1,0 +1,13 @@
+ul li {
+  font-size: large;
+  text-align: left;
+  margin-bottom: 5px;
+}
+.contact-form {
+  margin-top: 20px;
+}
+.submit-btn {
+  background-color: #3b160c;
+  color: white;
+  padding: 10px 30px;
+}

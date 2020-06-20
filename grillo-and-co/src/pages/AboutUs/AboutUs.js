@@ -40,7 +40,7 @@ class AboutUs extends Component {
   render() {
     return (
       <Container style={{ marginBottom: "100px" }}>
-        <h1>About Us</h1>
+        <h1>About Grillo & Co</h1>
         <CardImg
           className="about-us-photo"
           src={require(`../../images/${this.state.aboutUsPhoto}`)}

@@ -1,63 +1,62 @@
 body {
-    position: relative;
+  position: relative;
 }
 
 .footer {
-    background-color: #2B2214;
-    color: white;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    text-align: center;
-    margin-top: 7rem;
+  background-color: #2a100e;
+  color: white;
+  font-weight: bold;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 7rem;
 }
-.footer a{
-    color: white;
-    text-decoration: none;
+.footer a {
+  color: white;
+  text-decoration: none;
 }
 
 .copyright {
-    margin-top: 7px;
-    font-size: 16px;
-
+  margin-top: 7px;
+  font-size: 16px;
 }
 
 .project-github {
-    color: white;
-    font-size: 30px;
+  color: white;
+  font-size: 30px;
 }
 
 .project-github:hover {
-    color: black;
+  color: #3b160d;
 }
 
 .profile-links {
-    color: white;
-    margin: 12px;
-    font-size: 17px;
+  color: #3b160c;
+  margin: 12px;
+  font-size: 17px;
 }
 
 .profile-links:hover {
-    color: black;
+  color: #3b160d;
 }
 
+@media screen and (max-width: 470px) {
+  .footer {
+    margin-top: 5rem;
+  }
 
-@media screen and (max-width:470px) {
-    .footer {
-        margin-top: 5rem;
-    }
+  .project-github {
+    font-size: 26px;
+  }
 
-    .project-github {
-        font-size: 26px;
-    }
+  .copyright {
+    font-size: 15px;
+  }
 
-    .copyright {
-        font-size: 15px;
-    }
-
-    .profile-links {
-        font-size: 16px;
-    }
+  .profile-links {
+    font-size: 16px;
+  }
 }

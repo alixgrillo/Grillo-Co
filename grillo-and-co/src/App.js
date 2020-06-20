@@ -13,7 +13,6 @@ import Footer from "./components/Footer/Footer";
 import NavbarComponent from "./components/NavBar/NavBar";
 import FAQ from "./pages/FAQ/FAQ";
 
-
 class App extends Component {
   render() {
     return (
@@ -24,28 +23,15 @@ class App extends Component {
           <br></br>
           {/* <img src={image}></img> */}
           <Switch>
-          <Route
-              path="/aboutus"
-              render={()=> <AboutUs></AboutUs>}></Route>
-              <Route
-              path="/gallery"
-              render={()=> <Gallery></Gallery>}></Route>
-               <Route
-              path="/contactus"
-              render={()=> <Contact></Contact>}></Route>
-                <Route
-              path="/faq"
-              render={()=> <FAQ></FAQ>}></Route>
-              <Route
-              exact path="/admin"
-              render={()=> <Admin></Admin>}></Route>
-            <Route
-              path="/"
-              render={()=> <HomePage></HomePage>}></Route>
-              
+            <Route path="/aboutus" render={() => <AboutUs></AboutUs>}></Route>
+            <Route path="/gallery" render={() => <Gallery></Gallery>}></Route>
+            <Route path="/contactus" render={() => <Contact></Contact>}></Route>
+            <Route path="/faq" render={() => <FAQ></FAQ>}></Route>
+            <Route exact path="/admin" render={() => <Admin></Admin>}></Route>
+            <Route path="/" render={() => <HomePage></HomePage>}></Route>
           </Switch>
-         <Footer />
-         </div>
+          <Footer />
+        </div>
       </Router>
     );
   }

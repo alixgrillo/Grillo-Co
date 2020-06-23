@@ -18,8 +18,10 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <NavbarComponent></NavbarComponent>
-          <Header></Header>
+          <NavbarComponent
+            style={{ float: "left", width: "25%", position: "fixed" }}
+          ></NavbarComponent>
+          {/* <Header></Header> */}
           <br></br>
           {/* <img src={image}></img> */}
           <Switch>

@@ -3,58 +3,168 @@ import { Navbar, Nav, NavItem, Container, NavbarBrand } from "reactstrap";
 // import { Redirect } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import "./style.css";
+var FontAwesome = require("react-fontawesome");
 
 class NavbarComponent extends Component {
+  constructor() {
+    super();
+    this.state = {
+      activeLink: "",
+    };
+  }
+
+  componentDidMount() {}
+
+  handleClick = (event) => {
+    const {
+      target: { value },
+    } = event;
+    console.log(event);
+    console.log(event.target.dataset.user);
+    // And do whatever you need with it's value, for example change state
+    this.setState({ activeLink: event.target.dataset.user });
+  };
+
   render() {
     return (
       <div>
-        <Container>
-          <Navbar className="navbar" expand="sm">
-            <Nav style={{ marginLeft: "50px" }} className="mr-auto nav" tabs>
-              <NavbarBrand>
-                Grillo & Co
-                {/* <img
-                  src="/Grillo&Co_Logo_2020_BrandGuidelines_Logo_No_Tagline_Brown.jpg"
-                  width="175"
-                  height="175"
-                  className="d-inline-block align-top"
-                  alt="Grillo and Co Bespoke Furniture"
-                /> */}
-              </NavbarBrand>
-              <NavItem>
-                <Link to={`/`} className="nav-link">
-                  Home
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to={`/gallery`} className="nav-link">
-                  Gallery
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to={`/aboutus`} className="nav-link">
-                  About Us
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to={`/faq`} className="nav-link">
-                  FAQ
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to={`/forsale`} className="nav-link">
-                  For Sale
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to={`/contactus`} className="nav-link">
-                  Contact Us
-                </Link>
-              </NavItem>
-            </Nav>
-            {/* </Collapse> */}
-          </Navbar>
-        </Container>
+        {/* <Container> */}
+        <Navbar className="navbar" expand="sm">
+          <Nav vertical className="mr-auto nav">
+            <NavbarBrand>
+              {/* Grillo & Co */}
+              <img
+                src="/Grillo&Co_Logo_2020_BrandGuidelines_Line_Logo_Tagline_White.png"
+                width="150"
+                height="150"
+                className="d-inline-block align-top"
+                alt="Grillo and Co Bespoke Furniture"
+              />
+            </NavbarBrand>
+            <NavItem active>
+              <Link
+                to={`/`}
+                className="nav-link"
+                value="home"
+                data-user="home"
+                onClick={this.handleClick}
+                id={this.state.activeLink === "home" ? "active-link" : "none"}
+              >
+                Home <br></br>
+                <FontAwesome
+                  name="home"
+                  size="lg"
+                  style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+                />
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link
+                to={`/gallery`}
+                className="nav-link"
+                data-user="gallery"
+                onClick={this.handleClick}
+                id={
+                  this.state.activeLink === "gallery" ? "active-link" : "none"
+                }
+              >
+                Gallery <br></br>
+                <FontAwesome
+                  name="camera-retro"
+                  size="lg"
+                  style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+                />
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link
+                to={`/aboutus`}
+                className="nav-link"
+                data-user="about"
+                onClick={this.handleClick}
+                id={this.state.activeLink === "about" ? "active-link" : "none"}
+              >
+                About Us<br></br>
+                <FontAwesome
+                  name="user-secret"
+                  size="lg"
+                  style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+                />
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link
+                to={`/faq`}
+                className="nav-link"
+                data-user="faq"
+                onClick={this.handleClick}
+                id={this.state.activeLink === "faq" ? "active-link" : "none"}
+              >
+                FAQ<br></br>
+                <FontAwesome
+                  name="question-circle"
+                  size="lg"
+                  style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+                />
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link
+                to={`/forsale`}
+                className="nav-link"
+                data-user="sale"
+                onClick={this.handleClick}
+                id={this.state.activeLink === "sale" ? "active-link" : "none"}
+              >
+                For Sale<br></br>
+                <FontAwesome
+                  name="chair"
+                  size="lg"
+                  style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+                />
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link
+                to={`/contactus`}
+                className="nav-link"
+                data-user="contact"
+                onClick={this.handleClick}
+                id={
+                  this.state.activeLink === "contact" ? "active-link" : "none"
+                }
+              >
+                Contact Us<br></br>
+                <FontAwesome
+                  name="address-card"
+                  size="lg"
+                  style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+                />
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link to={`/contactus`} className="nav-link">
+                <FontAwesome
+                  name="mobile-alt"
+                  size="lg"
+                  style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+                />
+                <FontAwesome
+                  name="envelope"
+                  size="lg"
+                  style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+                />
+                <FontAwesome
+                  name="instagram"
+                  size="lg"
+                  style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+                />
+              </Link>
+            </NavItem>
+          </Nav>
+          {/* </Collapse> */}
+        </Navbar>
+        {/* </Container> */}
       </div>
     );
   }

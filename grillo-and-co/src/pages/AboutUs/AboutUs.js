@@ -39,7 +39,7 @@ class AboutUs extends Component {
 
   render() {
     return (
-      <Container style={{ marginBottom: "100px" }}>
+      <Container style={{ marginBottom: "100px", maxWidth: "75%" }}>
         <h1>About Grillo & Co</h1>
         <CardImg
           className="about-us-photo"

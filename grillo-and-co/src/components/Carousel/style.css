@@ -1,4 +1,4 @@
-.slide h1 {
+/* .slide h1 {
   transition: all 0.3s ease;
   -webkit-transform: translateY(-20px);
   transform: translateY(-20px);
@@ -198,7 +198,7 @@ button:hover {
 /*  .slide {
     height: 70vh;
     background-size: cover !important;
-  }*/
+  }
 
 .slide::before {
   content: "";
@@ -207,7 +207,7 @@ button:hover {
   width: 100%;
   height: 100%;
   /* background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.9))); */
-  /* background: linear-gradient(transparent, rgba(0, 0, 0, 0.9)); */
+/* background: linear-gradient(transparent, rgba(0, 0, 0, 0.9)); 
   bottom: 0;
   left: 0;
 }
@@ -226,7 +226,7 @@ button:hover {
   
   .previousButton:hover, .nextButton:hover {
     background: url('http://svgshare.com/i/41_.svg') no-repeat center center / 16px;
-  }*/
+  }
 
 .previousButton {
   left: 0;
@@ -273,14 +273,32 @@ button:hover {
   color: #ffffff;
   font-size: 64px;
   line-height: 1;
-}
-h1 {
-  /* color: #a99d99;
-  text-shadow: -1px 1px 0 #2a110e, 1px 1px 0 #2a110e, 1px -1px 0 #2a110e,
-    -1px -1px 0 #2a110e; */
-  color: #3b160c;
+} */
+
+.carousel-image {
+  position: relative;
+  width: 100%; /* for IE 6 */
+  height: 60vh;
 }
 
+h2 {
+  position: absolute;
+  /* top: 200px; */
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  /* text-shadow: -0.5px 0.5px 0 white, 0.5px 0.5px 0 white, 0.5px -0.5px 0 white,
+    -0.5px -0.5px 0 white; */
+  color: #3b160c;
+  background-color: transparent;
+  /* color: white; */
+  /* font: bold 24px/45px Helvetica, Sans-Serif; */
+
+  background: rgba(169, 157, 153, 0.7);
+  padding: 10px;
+}
+
+/* 
 .slider-content .inner p {
   color: #a99d99;
   font-size: 14px;
@@ -347,4 +365,4 @@ h1 {
   .slider-content .inner h1 {
     font-size: 32px;
   }
-}
+} */

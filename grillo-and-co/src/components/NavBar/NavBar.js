@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { Navbar, Nav, NavItem, Container, NavbarBrand } from "reactstrap";
+import {
+  Navbar,
+  Nav,
+  NavItem,
+  Container,
+  NavbarBrand,
+  Col,
+  Row,
+} from "reactstrap";
 // import { Redirect } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import "./style.css";
@@ -143,23 +151,35 @@ class NavbarComponent extends Component {
               </Link>
             </NavItem>
             <NavItem>
-              <Link to={`/contactus`} className="nav-link">
-                <FontAwesome
-                  name="mobile-alt"
-                  size="lg"
-                  style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
-                />
-                <FontAwesome
-                  name="envelope"
-                  size="lg"
-                  style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
-                />
-                <FontAwesome
-                  name="instagram"
-                  size="lg"
-                  style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
-                />
-              </Link>
+              <Row>
+                <Col lg={2}></Col>
+                <Col lg={3} className="nav-link-contact">
+                  <FontAwesome
+                    name="mobile-alt"
+                    size="sm"
+                    style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+                  />
+                </Col>
+                <Col lg={3} className="nav-link-contact">
+                  <a href="mailto:john@grilloandco.com">
+                    <FontAwesome
+                      name="envelope"
+                      size="sm"
+                      style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+                    />
+                  </a>
+                </Col>
+                <Col lg={3} className="nav-link-contact">
+                  <a
+                    href="http://www.instagram.com/grilloandco/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                </Col>
+              </Row>
+              <Link to={`/contactus`}></Link>
             </NavItem>
           </Nav>
           {/* </Collapse> */}

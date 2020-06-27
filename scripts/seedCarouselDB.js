@@ -6,32 +6,31 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/grilloco");
 const carouselSeed = [
   {
     title: "Grillo & Co - Coming Soon",
-    image: "http://rmfinewoodworking.com/wp-content/uploads/2019/08/Parquetry-Record-Credenza.jpeg", 
+    image: "award winning design.jpg",
     description: "Website Under Construction",
-    button: "About Us"
+    button: "About Us",
   },
   {
     title: "Grillo & Co - Coming Soon",
-    image: "http://rmfinewoodworking.com/wp-content/uploads/2019/03/Dovetails-and-Inlays-2.jpeg", 
+    image: "pepperwood table.jpg",
     description: "Fine Furniture Underway",
-    button: "Contact Us"
+    button: "Contact Us",
   },
   {
     title: "Grillo & Co - Coming Soon",
-    image: "http://rmfinewoodworking.com/wp-content/uploads/2019/01/IMG_0450-2.jpg", 
+    image: "planing wood in workshop.jpg",
     description: "Website Under Construction",
-    button: "Gallery"
-  }
-
+    button: "Gallery",
+  },
 ];
 
 db.Carousel.remove({})
   .then(() => db.Carousel.collection.insertMany(carouselSeed))
-  .then(data => {
+  .then((data) => {
     console.log(data.result.n + "added to list");
     process.exit(0);
   })
-  .catch(err => {
+  .catch((err) => {
     console.log(err);
     process.exit(1);
   });

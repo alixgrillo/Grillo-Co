@@ -3,19 +3,21 @@ body {
 }
 
 .footer {
-  background-color: #2a100e;
-  color: white;
+  background-color: white;
+  color: #2a110e;
   font-weight: bold;
-  position: fixed;
-  right: 0;
+  /* position: fixed; */
+  /* right: 0;
   bottom: 0;
-  left: 0;
+  left: 0; */
   padding: 1rem;
   text-align: center;
   margin-top: 7rem;
+  z-index: -1;
 }
 .footer a {
-  color: white;
+  background-color: white;
+  color: #2a110e;
   text-decoration: none;
 }
 
@@ -25,7 +27,7 @@ body {
 }
 
 .project-github {
-  color: white;
+  color: #2a110e;
   font-size: 30px;
 }
 

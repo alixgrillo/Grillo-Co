@@ -44,22 +44,38 @@ class CarouselP extends Component {
       >
         <div className="carousel-image">
           <Link to={`/aboutus`}>
-            <img src={require(`../../images/award winning design.jpg`)}></img>
-            <h2>Award Winning Designs</h2>
+            <img
+              className="img-box"
+              src={require(`../../images/award winning design.jpg`)}
+            ></img>
+            <div className="text">
+              <h2>Award Winning Designs</h2>
+              <p style={{ textAlign: "center" }}>Read more about Grillo & Co</p>
+            </div>
           </Link>
         </div>
         <div className="carousel-image">
-          <Link to={`/aboutus`}>
+          <Link to={`/gallery`}>
             <img src={require(`../../images/pepperwood table.jpg`)}></img>
-            <h2>Functional Art</h2>
+            <div className="text">
+              <h2>Functional Art</h2>
+              <p style={{ textAlign: "center" }}>
+                See more furniture by Grillo & Co
+              </p>
+            </div>
           </Link>
         </div>
         <div className="carousel-image">
-          <Link to={`/aboutus`}>
+          <Link to={`/faq`}>
             <img
               src={require(`../../images/planing wood in workshop.jpg`)}
             ></img>
-            <h2>Hand Craftsmanship</h2>
+            <div className="text">
+              <h2>Hand Craftsmanship</h2>
+              <p style={{ textAlign: "center" }}>
+                Get more information on woodworking
+              </p>
+            </div>
           </Link>
         </div>
       </Carousel>

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import { Container, Row, Col } from "reactstrap";
 
-
 import axios from "axios";
 import "./style.css";
 import GalleryCardDisplay from "../../components/GalleryCardDisplay/GalleryCardDisplay";
@@ -40,15 +39,13 @@ class Gallery extends Component {
 
   render() {
     return (
-      <Container>
-          <h1>Gallery</h1>
+      <Container className="container-block">
+        <h1>Gallery</h1>
         <div className="gallery-cards">
           <Row>
             {this.state.galleryPhotos.map((photo, index) => (
               <Col lg={4} key={index}>
-                <GalleryCardDisplay
-                  photo={photo}
-                ></GalleryCardDisplay>
+                <GalleryCardDisplay photo={photo}></GalleryCardDisplay>
               </Col>
             ))}
           </Row>

@@ -2,6 +2,18 @@ h1,
 h2 {
   font-family: "Roboto", sans-serif;
 }
+h1 {
+  padding: 30px;
+  border-bottom: double #2a110e;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  color: #2a110e;
+  text-shadow: 2px 2px 4px #a99d99;
+  font-size: 45px;
+  /* max-width: 50%;
+  display: block;
+  align-content: center; */
+}
 .display-2 {
   color: #2a110e;
   font-size: 60px;

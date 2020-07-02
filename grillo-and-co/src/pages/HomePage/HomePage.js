@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-
-import { Container } from "reactstrap";
+import { Link } from "react-router-dom";
+import { Container, Col, Row } from "reactstrap";
 import "./style.css";
 import CarouselP from "../../components/Carousel/Carousel";
+import Map from "../../components/Map/Map";
 import axios from "axios";
 
 class HomePage extends Component {
@@ -22,19 +23,48 @@ class HomePage extends Component {
 
   render() {
     return (
-      <Container>
-        <h1>Welcome to Grillo & Co</h1>
-        <p>
-          We make beautiful bespoke furniture for your home or work place.
-          Working almost entirely by commission, we custom design and handmake
-          each piece to your exact desire. The pieces of furniture we make
-          aren’t just ‘things’ but rather expressions and extensions of your
-          personality.
-        </p>
-        <div className="carousel">
-          <CarouselP content={this.state.content}></CarouselP>
-        </div>
-      </Container>
+      <div>
+        <Container className="container-block">
+          <h1>Welcome to Grillo & Co</h1>
+          <div className="pages pages-white">
+            <p>
+              We make beautiful bespoke furniture for your home or work place.
+              Working almost entirely by commission, we custom design and
+              handmake each piece to your exact desire. The pieces of furniture
+              we make aren’t just ‘things’ but rather expressions and extensions
+              of your personality.
+            </p>
+          </div>
+
+          <div className="carousel">
+            <CarouselP content={this.state.content}></CarouselP>
+          </div>
+          {/* </Container> */}
+          <div className="pages">
+            {/* <Container className="container-block"> */}
+            <h2>Custom Wood Furniture</h2>
+            <Row>
+              <Col lg={6}>
+                <Map></Map>
+              </Col>
+              <Col lg={6}>
+                <p>
+                  Based in Bend, OR we specialize in hand-made, custom wood
+                  furniture. We will help you visualise your ideas and, only
+                  when you’re completely happy with the proposed design,
+                  hand-craft your unique heirloom piece of furniture.
+                </p>
+                <p>
+                  Owner John Grillo gained a solid foundation in traditional and
+                  contemporary techniques from the top master craftsmen in
+                  Scotland. You can learn more about John{" "}
+                  <Link to={`/aboutus`}>here</Link>.
+                </p>
+              </Col>
+            </Row>
+          </div>
+        </Container>
+      </div>
     );
   }
 }

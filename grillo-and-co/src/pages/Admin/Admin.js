@@ -90,8 +90,9 @@ class Admin extends Component {
 
   render() {
     return (
-      <Container style={{ marginBottom: "100px" }}>
+      <Container className="container-block">
         <h1>Admin</h1>
+
         <Row>
           <h3>Add a Photo</h3>
           <UploadPhotoForm />

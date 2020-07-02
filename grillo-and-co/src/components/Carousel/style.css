@@ -281,15 +281,16 @@ button:hover {
   height: 60vh;
 }
 
-h2 {
+.text {
   position: absolute;
   /* top: 200px; */
   bottom: 40px;
   left: 0;
   width: 100%;
-  /* text-shadow: -0.5px 0.5px 0 white, 0.5px 0.5px 0 white, 0.5px -0.5px 0 white,
-    -0.5px -0.5px 0 white; */
-  color: #3b160c;
+  font-weight: bold;
+  text-shadow: -0.5px 0.5px 0 #a99d99, 0.5px 0.5px 0 #a99d99,
+    0.5px -0.5px 0 #a99d99, -0.5px -0.5px 0 #a99d99;
+  color: #2a110e;
   background-color: transparent;
   /* color: white; */
   /* font: bold 24px/45px Helvetica, Sans-Serif; */

@@ -14,6 +14,16 @@ body {
   height: 40vmin;
   pointer-events: none;
 }
+.container-block {
+  margin-bottom: 100px;
+  max-width: 80%;
+  /* display: flex;
+  align-content: center;
+  text-align: center; */
+}
+a {
+  color: #3b160c;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

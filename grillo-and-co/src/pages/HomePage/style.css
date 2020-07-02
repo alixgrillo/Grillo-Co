@@ -1,3 +1,8 @@
-.carousel{
-    margin-top: 20px
+.carousel {
+  margin-top: 20px;
+}
+.off-color {
+  background-color: rgba(169, 157, 153, 0.7);
+  min-height: 40vh;
+  padding-top: 20px;
 }

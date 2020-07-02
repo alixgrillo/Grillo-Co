@@ -34,9 +34,9 @@ class FAQ extends Component {
 
   render() {
     return (
-      <Container style={{ marginBottom: "100px" }}>
+      <Container className="container-block">
         <h1>Frequently Asked Questions</h1>
-        <div className="gallery-cards">
+        <div className="gallery-cards pages pages-white">
           <Row style={{ marginBottom: "20px" }}>
             <h3>WHY BUY BESPOKE?</h3>
             <hr></hr>

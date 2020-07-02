@@ -12,6 +12,7 @@ import Admin from "./pages/Admin/Admin";
 import Footer from "./components/Footer/Footer";
 import NavbarComponent from "./components/NavBar/NavBar";
 import FAQ from "./pages/FAQ/FAQ";
+import ForSale from "./pages/ForSale/ForSale";
 
 class App extends Component {
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
             <Route path="/gallery" render={() => <Gallery></Gallery>}></Route>
             <Route path="/contactus" render={() => <Contact></Contact>}></Route>
             <Route path="/faq" render={() => <FAQ></FAQ>}></Route>
+            <Route path="/forsale" render={() => <ForSale></ForSale>}></Route>
             <Route exact path="/admin" render={() => <Admin></Admin>}></Route>
             <Route path="/" render={() => <HomePage></HomePage>}></Route>
           </Switch>

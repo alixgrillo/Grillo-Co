@@ -29,11 +29,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  //app.use(express.static('client/build'));
-  app.use(express.static(path.join(__dirname, "grillo-and-co/build")));
-}
+// // Serve up static assets (usually on heroku)
+// if (process.env.NODE_ENV === "production") {
+//   //app.use(express.static('client/build'));
+//   app.use(express.static(path.join(__dirname, "grillo-and-co/build")));
+// }
 
 //app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -44,6 +44,19 @@ app.use("/api", apiRoutes);
 // Routes
 require("./routes/apiFileUpload")(app, multer);
 require("./routes/emailRoute")(app);
+
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  //app.use(express.static('client/build'));
+  // app.use(express.static(path.join(__dirname, "grillo-and-co/build")));
+  app.get("/*", function (req, res) {
+    res.sendFile(path.join(__dirname, "./grillo-and-co/build"), function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    });
+  });
+}
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/grilloco", {

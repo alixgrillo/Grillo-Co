@@ -32,6 +32,12 @@ class Admin extends Component {
       this.getPhotos();
     }
   }
+  // componentWillUnmount() {
+  //   this.setState({
+  //     loggedin: false,
+  //     enteredPassword: "",
+  //   });
+  // }
 
   handleInputChange = (event) => {
     // Getting the value and name of the input which triggered the change
@@ -57,14 +63,10 @@ class Admin extends Component {
       })
     );
     this.dbGet(`/api/other`).then((response) => {
-      console.log(response.data);
       if (response.data.length > 0) {
-        this.setState(
-          {
-            aboutUsPhoto: response.data[0].aboutUsPhoto,
-          },
-          console.log(this.state)
-        );
+        this.setState({
+          aboutUsPhoto: response.data[0].aboutUsPhoto,
+        });
       }
     });
   };
@@ -73,7 +75,6 @@ class Admin extends Component {
     const requestOptions = {
       aboutUsPhoto: state.aboutUsPhoto,
     };
-    console.log(state.aboutUsPhoto);
     this.dbPut(requestOptions).then((data) => console.log(data));
     // empty dependency array means this effect will only run once (like componentDidMount in classes)
   };
@@ -96,11 +97,11 @@ class Admin extends Component {
   };
   login = (e) => {
     e.preventDefault();
-    console.log(this.state.enteredPassword, password);
     if (this.state.enteredPassword === password) {
       this.setState({
         loggedin: true,
       });
+      this.getPhotos();
     }
   };
 

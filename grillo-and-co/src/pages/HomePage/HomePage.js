@@ -16,7 +16,6 @@ class HomePage extends Component {
 
   componentDidMount() {
     axios.get("/api/carousel").then((res) => {
-      console.log(res.data);
       this.setState({ content: res.data });
     });
   }
@@ -37,7 +36,10 @@ class HomePage extends Component {
           </div>
 
           <div className="carousel">
-            <CarouselP content={this.state.content}></CarouselP>
+            <CarouselP
+              content={this.state.content}
+              setActiveLink={this.props.setActiveLink}
+            ></CarouselP>
           </div>
           {/* </Container> */}
           <div className="pages">

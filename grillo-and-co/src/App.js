@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { Container } from "reactstrap";
 // import logo from "./logo.svg";
 import "./App.css";
-import Header from "./components/Header/Header";
+// import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Contact from "./pages/Contact/Contact";
@@ -13,12 +13,12 @@ import Footer from "./components/Footer/Footer";
 import NavbarComponent from "./components/NavBar/NavBar";
 import FAQ from "./pages/FAQ/FAQ";
 import ForSale from "./pages/ForSale/ForSale";
-import MobileResponsive from "./components/MobileResponsive/MobileResponsive";
+// import MobileResponsive from "./components/MobileResponsive/MobileResponsive";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { width: 0, height: 0 };
+    this.state = { width: 0, height: 0, activeLink: "home" };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
@@ -34,11 +34,19 @@ class App extends Component {
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
+
+  setActiveLink = (link) => {
+    this.setState({ activeLink: link });
+  };
   render() {
     return (
       <Router>
         <div className="App">
-          <NavbarComponent width={this.state.width}></NavbarComponent>
+          <NavbarComponent
+            width={this.state.width}
+            activeLink={this.state.activeLink}
+            setActiveLink={this.setActiveLink}
+          ></NavbarComponent>
           {/* <Header></Header> */}
           <br></br>
           {/* <img src={image}></img> */}
@@ -53,7 +61,12 @@ class App extends Component {
               path="/admin8145"
               render={() => <Admin></Admin>}
             ></Route>
-            <Route path="/" render={() => <HomePage></HomePage>}></Route>
+            <Route
+              path="/"
+              render={() => (
+                <HomePage setActiveLink={this.setActiveLink}></HomePage>
+              )}
+            ></Route>
           </Switch>
           <Footer />
           {/* <MobileResponsive

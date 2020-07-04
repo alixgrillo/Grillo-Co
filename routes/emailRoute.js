@@ -4,7 +4,6 @@ module.exports = function (app) {
     // https://github.com/sendgrid/sendgrid-nodejs
     const sgMail = require("@sendgrid/mail");
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-    console.log(process.env.SENDGRID_API_KEY);
     const msg = {
       to: "alix.grillo2@gmail.com",
       from: "alix.grillo2@gmail.com",

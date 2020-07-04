@@ -3,27 +3,30 @@ import {
   Navbar,
   Nav,
   NavItem,
-  Container,
   NavbarBrand,
   Col,
   Row,
   NavbarToggler,
   Collapse,
-  NavLink,
 } from "reactstrap";
 // import { Redirect } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import "./style.css";
-import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";
 var FontAwesome = require("react-fontawesome");
 
 class NavbarComponent extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       activeLink: "home",
       collapsed: true,
     };
+  }
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      activeLink: nextProps.activeLink,
+    });
   }
 
   componentDidMount() {
@@ -31,19 +34,23 @@ class NavbarComponent extends Component {
       width: this.props.width,
     });
   }
+  // componentWillUpdate() {}
+  updateActiveLink = (link) => {
+    if (this.state.activeLink !== link) {
+    }
+  };
   toggleNavbar = () => {
-    console.log("CLICK");
     this.setState({ collapsed: !this.state.collapsed });
   };
 
   handleClick = (event) => {
-    const {
-      target: { value },
-    } = event;
-    console.log(event);
-    console.log(event.target.dataset.user);
+    // const {
+    //   target: { value },
+    // } = event;
     // And do whatever you need with it's value, for example change state
-    this.setState({ activeLink: event.target.dataset.user, collapsed: true });
+    //this.setState({ activeLink: event.target.dataset.user, collapsed: true });
+    this.setState({ collapsed: true });
+    this.props.setActiveLink(event.target.dataset.user);
   };
 
   render() {

@@ -69,9 +69,10 @@ class GalleryDND extends Component {
   handleRLDDChange(newItems) {
     this.setState({ items: newItems });
     newItems.forEach((item, index) => {
-      this.dbPut(`/api/adminSavedPhoto/${item._id}`, index).then((response) => {
-        console.log(response);
-      });
+      this.dbPut(`/api/adminSavedPhoto/${item._id}`, index);
+      // .then((response) => {
+      //   console.log(response);
+      // });
     });
   }
 

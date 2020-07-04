@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { AvForm, AvField } from "availity-reactstrap-validation";
+// import { AvForm, AvField } from "availity-reactstrap-validation";
 import { Button, Form, FormGroup, Input, Col, FormFeedback } from "reactstrap";
 import axios from "axios";
 import "./style.css";
@@ -24,9 +24,7 @@ class ContactForm extends Component {
     this.handleInvalidSubmit = this.handleInvalidSubmit.bind(this);
   }
 
-  componentDidMount() {
-    console.log("HELLO!");
-  }
+  componentDidMount() {}
 
   handleInputChange = (event) => {
     // Getting the value and name of the input which triggered the change
@@ -37,8 +35,8 @@ class ContactForm extends Component {
     this.setState({
       [name]: value,
     });
-    var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/;
-    console.log(this.state.email !== regex);
+    // var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/;
+
     this.setState({
       validation: {
         email: this.state.email === "",
@@ -51,12 +49,6 @@ class ContactForm extends Component {
   onClickHandler = (event) => {
     this.validate();
     event.preventDefault();
-    console.log(
-      !this.state.validation.name &&
-        !this.state.validation.email &&
-        !this.state.validation.subject &&
-        !this.state.validation.message
-    );
     if (
       !this.state.validation.name &&
       !this.state.validation.email &&
@@ -65,7 +57,8 @@ class ContactForm extends Component {
     ) {
       const requestOptions = this.state;
 
-      this.dbPost(requestOptions).then((data) => console.log(data));
+      // this.dbPost(requestOptions).then((data) => console.log(data));
+      this.dbPost(requestOptions);
     }
   };
   dbPost = async (requestOptions) => {
@@ -77,8 +70,7 @@ class ContactForm extends Component {
     return body;
   };
   validate = () => {
-    var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/;
-    console.log(regex);
+    //var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/;
     this.setState({
       validation: {
         email: this.state.email === "",

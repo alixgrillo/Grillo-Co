@@ -11,9 +11,7 @@ class Map extends Component {
     },
     zoom: 11,
   };
-  componentDidMount() {
-    console.log(google);
-  }
+  componentDidMount() {}
 
   render() {
     return (

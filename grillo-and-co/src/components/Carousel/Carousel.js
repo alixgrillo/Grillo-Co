@@ -19,18 +19,18 @@ class CarouselP extends Component {
   }
   componentDidMount() {
     this.loadSlides();
-    console.log(this.state);
   }
 
   loadSlides = () => {
-    console.log(this.props.content);
-    this.setState(
-      {
-        slides: this.props.content,
-      },
-      console.log(this.state)
-    );
+    this.setState({
+      slides: this.props.content,
+    });
   };
+
+  handleClick = (event) => {
+    this.props.setActiveLink(event.currentTarget.dataset.user);
+  };
+
   render() {
     // return <Carousel>{this.state.slides}</Carousel>;
     return (
@@ -46,7 +46,12 @@ class CarouselP extends Component {
         className="carousel-div"
       >
         <div className="carousel-image">
-          <Link to={`/aboutus`}>
+          <Link
+            to={`/aboutus`}
+            data-user="about"
+            value="about"
+            onClick={this.handleClick}
+          >
             <img
               className="img-box"
               src={require(`../../images/Pepperwood.jpg`)}
@@ -59,7 +64,12 @@ class CarouselP extends Component {
           </Link>
         </div>
         <div className="carousel-image">
-          <Link to={`/aboutus`}>
+          <Link
+            to={`/gallery`}
+            data-user="gallery"
+            value="gallery"
+            onClick={this.handleClick}
+          >
             <img
               className="img-box"
               src={require(`../../images/Dovetails and Inlays.jpeg`)}
@@ -68,7 +78,12 @@ class CarouselP extends Component {
           </Link>
         </div>
         <div className="carousel-image">
-          <Link to={`/gallery`}>
+          <Link
+            to={`/gallery`}
+            data-user="gallery"
+            value="gallery"
+            onClick={this.handleClick}
+          >
             <img
               src={require(`../../images/oak farmhouse desk.JPG`)}
               alt="oak farmhouse desk"
@@ -83,7 +98,12 @@ class CarouselP extends Component {
         </div>
 
         <div className="carousel-image">
-          <Link to={`/contactus`}>
+          <Link
+            to={`/contactus`}
+            data-user="contact"
+            value="contact"
+            onClick={this.handleClick}
+          >
             <img
               className="img-box"
               src={require(`../../images/walnut coffee table in the sun.JPG`)}
@@ -99,7 +119,12 @@ class CarouselP extends Component {
         </div>
 
         <div className="carousel-image">
-          <Link to={`/gallery`}>
+          <Link
+            to={`/gallery`}
+            data-user="gallery"
+            value="gallery"
+            onClick={this.handleClick}
+          >
             <img
               className="img-box"
               src={require(`../../images/dovetail in writing desk.JPG`)}
@@ -108,7 +133,12 @@ class CarouselP extends Component {
           </Link>
         </div>
         <div className="carousel-image">
-          <Link to={`/gallery`}>
+          <Link
+            to={`/gallery`}
+            data-user="gallery"
+            value="gallery"
+            onClick={this.handleClick}
+          >
             <img
               className="img-box"
               src={require(`../../images/kaylee desk.JPG`)}
@@ -117,7 +147,12 @@ class CarouselP extends Component {
           </Link>
         </div>
         <div className="carousel-image">
-          <Link to={`/gallery`}>
+          <Link
+            to={`/gallery`}
+            data-user="gallery"
+            value="gallery"
+            onClick={this.handleClick}
+          >
             <img
               src={require(`../../images/windsor chair.JPG`)}
               alt="windsor chair"
@@ -125,7 +160,12 @@ class CarouselP extends Component {
           </Link>
         </div>
         <div className="carousel-image">
-          <Link to={`/gallery`}>
+          <Link
+            to={`/gallery`}
+            data-user="gallery"
+            value="gallery"
+            onClick={this.handleClick}
+          >
             <img
               className="img-box"
               src={require(`../../images/Parquetry Record Credenza.jpeg`)}
@@ -135,7 +175,12 @@ class CarouselP extends Component {
         </div>
 
         <div className="carousel-image">
-          <Link to={`/gallery`}>
+          <Link
+            to={`/faq`}
+            data-user="faq"
+            value="faq"
+            onClick={this.handleClick}
+          >
             <img
               className="img-box"
               src={require(`../../images/Detail Plant Stand.jpeg`)}
@@ -150,7 +195,12 @@ class CarouselP extends Component {
           </Link>
         </div>
         <div className="carousel-image">
-          <Link to={`/gallery`}>
+          <Link
+            to={`/gallery`}
+            data-user="gallery"
+            value="gallery"
+            onClick={this.handleClick}
+          >
             <img
               className="img-box"
               src={require(`../../images/console table.jpg`)}
@@ -206,7 +256,6 @@ export default CarouselP;
 //   // if (!props) return <div>Images are not fetched yet!</div>;
 //   useEffect(() => {
 //     setauto(true);
-//     console.log(auto);
 //   }, [props.content, auto]);
 
 //   const item = (
@@ -319,7 +368,7 @@ const CarouselP = (props) => {
 //   // if (!props) return <div>Images are not fetched yet!</div>;
 //   useEffect(() => {
 //     setauto(true);
-//     console.log(auto);
+//
 //   }, [props.content, auto]);
 
 //   const item = (

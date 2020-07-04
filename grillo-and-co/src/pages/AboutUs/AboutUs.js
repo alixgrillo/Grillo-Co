@@ -18,13 +18,9 @@ class AboutUs extends Component {
 
   getPhoto = () => {
     this.dbGet(`/api/other`).then((response) => {
-      console.log(response.data[0].aboutUsPhoto.split(": ")[1]);
-      this.setState(
-        {
-          aboutUsPhoto: response.data[0].aboutUsPhoto.split(": ")[1],
-        },
-        console.log(this.state)
-      );
+      this.setState({
+        aboutUsPhoto: response.data[0].aboutUsPhoto.split(": ")[1],
+      });
     });
   };
 

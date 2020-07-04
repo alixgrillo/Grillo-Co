@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import { Container, Row, Col } from "reactstrap";
+import { Container } from "reactstrap";
 
-import axios from "axios";
+// import axios from "axios";
 import "./style.css";
-import GalleryCardDisplay from "../../components/GalleryCardDisplay/GalleryCardDisplay";
+// import GalleryCardDisplay from "../../components/GalleryCardDisplay/GalleryCardDisplay";
 
 class ForSale extends Component {
   //   constructor() {

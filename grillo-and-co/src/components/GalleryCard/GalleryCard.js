@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Button,
   Card,
@@ -10,9 +10,9 @@ import {
   Label,
   Input,
   Modal,
-  ModalHeader, 
-  ModalBody, 
-  ModalFooter
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
 } from "reactstrap";
 import "./style.css";
 import UploadPhotoForm from "../UploadPhotoForm/UploadPhotoForm";
@@ -21,7 +21,7 @@ import axios from "axios";
 
 const card = {
   width: "25%",
-  float: "left"
+  float: "left",
 };
 // const p = {
 //   position: "relative",
@@ -40,35 +40,32 @@ const card = {
 //   borderColor: "#2B2214",
 // };
 
-
 const GalleryCard = (props) => {
-  console.log(props);
-  const {
-    buttonLabel,
-    className
-  } = props;
+  const { className } = props;
 
   const [modal, setModal] = useState(false);
-  const [modalShow, setModalShow] = useState(false);
+  // const [modalShow, setModalShow] = useState(false);
   const [saveToGallery, setSaveToGallery] = useState(props.photo.inGallery);
 
   const toggle = () => setModal(!modal);
   const saveToGalleryById = (e) => {
-    console.log(e.target.checked);
     setSaveToGallery(e.target.checked);
     updatePostDB(e.target.checked);
-  }
+  };
 
   const updatePostDB = (checkbox) => {
     // POST request using fetch inside useEffect React hook
     const requestOptions = {
-      inGallery: checkbox
+      inGallery: checkbox,
     };
-    dbPut(requestOptions, props.photo._id).then(data => console.log(data));
+    dbPut(requestOptions, props.photo._id);
     // empty dependency array means this effect will only run once (like componentDidMount in classes)
   };
   const dbPut = async (requestOptions, id) => {
-    const response = await axios.put(`/api/adminSavedPhoto/${id}`, requestOptions);
+    const response = await axios.put(
+      `/api/adminSavedPhoto/${id}`,
+      requestOptions
+    );
     const body = await response;
     if (response.status !== 200) {
       throw Error(body.message);
@@ -77,33 +74,55 @@ const GalleryCard = (props) => {
   };
 
   return (
-  <div  style={card}>
-    <Card>
-      <CardImg top width="30%" src={require(`../../images/${props.photo.photoInfo.name}`)} alt={props.photo.keyword} />
-      <CardBody>
-        <CardTitle>{props.photo.title}</CardTitle>
-        {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-        <CardText>{props.photo.description}</CardText>
-        <Button id={props.photo._id} onClick={toggle}>Update Information</Button>
-        <FormGroup check>
+    <div style={card}>
+      <Card>
+        <CardImg
+          top
+          width="30%"
+          src={require(`../../images/${props.photo.photoInfo.name}`)}
+          alt={props.photo.keyword}
+        />
+        <CardBody>
+          <CardTitle>{props.photo.title}</CardTitle>
+          {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
+          <CardText>{props.photo.description}</CardText>
+          <Button id={props.photo._id} onClick={toggle}>
+            Update Information
+          </Button>
+          <FormGroup check>
             <Label check>
-              <Input type="checkbox" id="checkbox2" value={props.photo.inGallery} checked={props.photo.inGallery} onChange={saveToGalleryById}/>{' '}
+              <Input
+                type="checkbox"
+                id="checkbox2"
+                value={props.photo.inGallery}
+                checked={props.photo.inGallery}
+                onChange={saveToGalleryById}
+              />{" "}
               Include in Gallery
             </Label>
           </FormGroup>
-      </CardBody>
-    </Card>
-    <Modal isOpen={modal} toggle={toggle} className={className}>
+        </CardBody>
+      </Card>
+      <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Update Information</ModalHeader>
         <ModalBody>
-          <UploadPhotoForm modal={true} id={props.photo._id} title={props.photo.title} description={props.photo.description} keyword={props.photo.keyword}/>
+          <UploadPhotoForm
+            modal={true}
+            id={props.photo._id}
+            title={props.photo.title}
+            description={props.photo.description}
+            keyword={props.photo.keyword}
+          />
         </ModalBody>
         <ModalFooter>
           {/* <Button color="primary" onClick={toggle}>Do Something</Button>{' '} */}
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
+          <Button color="secondary" onClick={toggle}>
+            Cancel
+          </Button>
         </ModalFooter>
       </Modal>
-  </div>)
+    </div>
+  );
 };
 
 export default GalleryCard;

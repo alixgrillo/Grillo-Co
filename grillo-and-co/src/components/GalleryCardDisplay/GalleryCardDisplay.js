@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Button,
   Card,
@@ -7,19 +7,17 @@ import {
   CardTitle,
   CardText,
   Modal,
-  ModalHeader,
   ModalBody,
   ModalFooter,
 } from "reactstrap";
 
-import UploadPhotoForm from "../UploadPhotoForm/UploadPhotoForm";
-import axios from "axios";
+// import UploadPhotoForm from "../UploadPhotoForm/UploadPhotoForm";
+// import axios from "axios";
 //import image from "../../images/Alix.jpg";
 import "./style.css";
 
 const GalleryCardDisplay = (props) => {
-  console.log(props);
-  const { buttonLabel, className } = props;
+  // const { buttonLabel, className } = props;
 
   const [modal, setModal] = useState(false);
   //   const [modalShow, setModalShow] = useState(false);
@@ -32,25 +30,25 @@ const GalleryCardDisplay = (props) => {
   //     updatePostDB(e.target.checked);
   //   }
 
-  const updatePostDB = (checkbox) => {
-    // POST request using fetch inside useEffect React hook
-    const requestOptions = {
-      inGallery: checkbox,
-    };
-    dbPut(requestOptions, props.photo._id).then((data) => console.log(data));
-    // empty dependency array means this effect will only run once (like componentDidMount in classes)
-  };
-  const dbPut = async (requestOptions, id) => {
-    const response = await axios.put(
-      `/api/adminSavedPhoto/${id}`,
-      requestOptions
-    );
-    const body = await response;
-    if (response.status !== 200) {
-      throw Error(body.message);
-    }
-    return body;
-  };
+  // const updatePostDB = (checkbox) => {
+  //   // POST request using fetch inside useEffect React hook
+  //   const requestOptions = {
+  //     inGallery: checkbox,
+  //   };
+  //   dbPut(requestOptions, props.photo._id).then((data) => console.log(data));
+  //   // empty dependency array means this effect will only run once (like componentDidMount in classes)
+  // // };
+  // const dbPut = async (requestOptions, id) => {
+  //   const response = await axios.put(
+  //     `/api/adminSavedPhoto/${id}`,
+  //     requestOptions
+  //   );
+  //   const body = await response;
+  //   if (response.status !== 200) {
+  //     throw Error(body.message);
+  //   }
+  //   return body;
+  // };
 
   return (
     <div>

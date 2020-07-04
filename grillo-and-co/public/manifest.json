@@ -1,19 +1,19 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Grillo and Co",
+  "name": "Grillo and Co Bespoke Furniture",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "grillo_co_logo_2020_brandguidelines_logo_no_tagline_black_EhM_icon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "Grillo&Co_Logo_2020_BrandGuidelines_Logo_Tagline_Black.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "Grillo&Co_Logo_2020_BrandGuidelines_Logo_Tagline_Black.png",
       "type": "image/png",
       "sizes": "512x512"
     }

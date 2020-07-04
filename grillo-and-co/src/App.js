@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { Container } from "reactstrap";
 // import logo from "./logo.svg";
 import "./App.css";
-// import Header from "./components/Header/Header";
+import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Contact from "./pages/Contact/Contact";

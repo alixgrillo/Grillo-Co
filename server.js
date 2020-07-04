@@ -50,7 +50,7 @@ if (process.env.NODE_ENV === "production") {
   //app.use(express.static('client/build'));
   // app.use(express.static(path.join(__dirname, "grillo-and-co/build")));
   app.get("/*", function (req, res) {
-    res.sendFile(path.join(__dirname, "./grillo-and-co/build"), function (err) {
+    res.sendFile(path.join(__dirname, "grillo-and-co/build"), function (err) {
       if (err) {
         res.status(500).send(err);
       }

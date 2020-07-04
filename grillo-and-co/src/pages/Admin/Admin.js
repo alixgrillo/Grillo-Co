@@ -24,6 +24,7 @@ class Admin extends Component {
       aboutUsPhoto: "",
       loggedin: false,
       enteredPassword: "",
+      photosToOrder: [],
     };
   }
 
@@ -38,6 +39,7 @@ class Admin extends Component {
   //     enteredPassword: "",
   //   });
   // }
+  componentDidUpdate() {}
 
   handleInputChange = (event) => {
     // Getting the value and name of the input which triggered the change
@@ -49,7 +51,9 @@ class Admin extends Component {
       [name]: value,
     });
   };
-
+  updateCard = () => {
+    this.getPhotos();
+  };
   onClickHandler = (event) => {
     event.preventDefault();
     this.updateDB(this.state);
@@ -60,6 +64,10 @@ class Admin extends Component {
         savedPhotos: response.data.sort((a, b) =>
           a.galleryOrder > b.galleryOrder ? 1 : -1
         ),
+        photosToOrder: response.data
+          .filter((a) => a.inGallery)
+          .sort((a, b) => (a.galleryOrder > b.galleryOrder ? 1 : -1)),
+        loggedin: true,
       })
     );
     this.dbGet(`/api/other`).then((response) => {
@@ -75,7 +83,9 @@ class Admin extends Component {
     const requestOptions = {
       aboutUsPhoto: state.aboutUsPhoto,
     };
-    this.dbPut(requestOptions).then((data) => console.log(data));
+    this.dbPut(requestOptions).then((data) =>
+      this.setState({ aboutUsPhoto: data.data.aboutUsPhoto })
+    );
     // empty dependency array means this effect will only run once (like componentDidMount in classes)
   };
 
@@ -118,7 +128,11 @@ class Admin extends Component {
             <Row>
               <h3>Saved Photos</h3>
               {this.state.savedPhotos.map((photo, index) => (
-                <GalleryCard photo={photo} key={index}></GalleryCard>
+                <GalleryCard
+                  photo={photo}
+                  key={index}
+                  updateCard={this.updateCard}
+                ></GalleryCard>
               ))}
             </Row>
             <Row>
@@ -148,7 +162,7 @@ class Admin extends Component {
             </Row>
             <Row>
               <h3>Gallery Ordering</h3>
-              <GalleryDND savedPhotos={this.state.savedPhotos} />
+              <GalleryDND savedPhotos={this.state.photosToOrder} />
             </Row>
           </div>
         ) : (

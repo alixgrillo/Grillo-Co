@@ -4,8 +4,8 @@ import RLDD from "react-list-drag-and-drop/lib/RLDD";
 import "./style.css";
 
 class GalleryDND extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       items: [],
     };
@@ -48,6 +48,25 @@ class GalleryDND extends Component {
   componentDidMount() {
     this.getPhotos();
   }
+  static getDerivedStateFromProps(props, state) {
+    if (props.savedPhotos !== state.items) {
+      let items = props.savedPhotos.filter((photo) => photo.inGallery);
+      items = items.map((item, index) => {
+        item.id = item.galleryOrder ? item.galleryOrder : 1;
+        item.body = item.photoInfo.name;
+        return item;
+      });
+      console.log(items);
+      return {
+        items: items,
+      };
+    }
+    // Return null to indicate no change to state.
+    return null;
+  }
+  // componentWillReceiveProps(nextProps) {
+  //   this.getPhotos();
+  // }
 
   itemRenderer(item, index) {
     return (

@@ -51,6 +51,7 @@ const GalleryCard = (props) => {
   const saveToGalleryById = (e) => {
     setSaveToGallery(e.target.checked);
     updatePostDB(e.target.checked);
+    props.updateCard();
   };
 
   const updatePostDB = (checkbox) => {

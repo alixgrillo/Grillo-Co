@@ -19,6 +19,22 @@
 ul {
   box-shadow: 8px rgba(0, 0, 0, 0.2), 8px rgba(0, 0, 0, 0.19);
 }
+.big-screen-nav {
+  float: left;
+  width: 25%;
+  position: fixed;
+}
+.small-screen-nav {
+  width: 100%;
+}
+.logo {
+  height: 17vh;
+  width: auto;
+}
+.small-screen-nav-list {
+  background-color: #2a110e;
+  z-index: 100;
+}
 
 .nav {
   margin: 0 auto;
@@ -34,7 +50,7 @@ ul {
 .nav-link,
 .nav-link-contact,
 .nav-link-contact a {
-  color: white;
+  color: #a99d99;
   /* margin-left: 10px;
   margin-right: 10px; */
   font-size: 20px;
@@ -57,6 +73,14 @@ ul {
 #active-link {
   background-color: #75645b;
 }
+.toggle {
+  color: white;
+  font-size: 3vh;
+  margin: 5vh;
+}
+.navbar-toggler {
+  color: white;
+}
 
 .nav-link-dark {
   color: #2a110e;
@@ -68,6 +92,28 @@ ul {
 }
 .light {
   background-color: #75645b;
+}
+@media screen and (max-width: 1600px) {
+  .navbar {
+    position: inherit;
+    background-color: #2a110e;
+    border-radius: 0px;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* padding-left: 20%; */
+    float: left;
+    margin-left: 0px;
+    z-index: 1;
+    max-width: 100%;
+    max-height: 18vh;
+  }
+  .navbar-collapse {
+    z-index: 100;
+
+    /* max-width: 50vw; */
+  }
 }
 @media screen and (max-width: 470px) {
   .nav-link {

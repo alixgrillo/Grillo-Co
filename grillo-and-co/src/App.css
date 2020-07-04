@@ -24,7 +24,11 @@ body {
 a {
   color: #3b160c;
 }
-
+@media screen and (max-width: 1600px) {
+  .container-block {
+    margin-top: 20vh;
+  }
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

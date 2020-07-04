@@ -9,7 +9,7 @@ export const Footer = (props) => {
       <footer className="footer">
         <Container>
           <Row>
-            <Col md={4}>
+            <Col className="footer-text" md={4}>
               <FontAwesome
                 name="mobile-alt"
                 size="lg"
@@ -17,7 +17,7 @@ export const Footer = (props) => {
               />{" "}
               Phone Number: 814.598.2993
             </Col>
-            <Col md={4}>
+            <Col className="footer-text" md={4}>
               <a href="mailto:john@grilloandco.com">
                 <FontAwesome
                   name="envelope"
@@ -27,7 +27,7 @@ export const Footer = (props) => {
                 Email: john@grilloandco.com
               </a>
             </Col>
-            <Col md={4}>
+            <Col className="footer-text" md={4}>
               <a
                 href="http://www.instagram.com/grilloandco/"
                 target="_blank"

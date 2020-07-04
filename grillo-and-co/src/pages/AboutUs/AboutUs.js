@@ -8,7 +8,7 @@ class AboutUs extends Component {
   constructor() {
     super();
     this.state = {
-      aboutUsPhoto: "0011- Alix and John's Wedding Photos.jpg",
+      aboutUsPhoto: "Chippendale Student Images - April 2018 -381.jpg",
     };
   }
 

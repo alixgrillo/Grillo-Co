@@ -9,7 +9,7 @@ h1 {
   text-transform: capitalize;
   color: #2a110e;
   text-shadow: 2px 2px 4px #a99d99;
-  font-size: 45px;
+  font-size: 4vh;
   /* max-width: 50%;
   display: block;
   align-content: center; */
@@ -34,7 +34,14 @@ h1 {
   color: #a99d99;
   margin-top: -50px;
 }
-
+@media screen and (max-width: 1600px) {
+  h1 {
+    font-size: large;
+  }
+  h2 {
+    font-size: medium;
+  }
+}
 @media screen and (max-width: 470px) {
   .header {
     font-size: 60px;

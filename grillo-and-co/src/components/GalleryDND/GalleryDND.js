@@ -15,9 +15,9 @@ class GalleryDND extends Component {
 
   getPhotos = () => {
     this.dbGet(`/api/adminSavedPhoto`).then((response) => {
-      let items = response.data.filter(photo => photo.inGallery);
+      let items = response.data.filter((photo) => photo.inGallery);
       items = items.map((item, index) => {
-        item.id = item.galleryOrder;
+        item.id = item.galleryOrder ? item.galleryOrder : 1;
         item.body = item.photoInfo.name;
         return item;
       });

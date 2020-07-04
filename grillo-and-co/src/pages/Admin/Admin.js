@@ -7,6 +7,7 @@ import {
   CustomInput,
   Form,
   Button,
+  Input,
 } from "reactstrap";
 import "./style.css";
 import UploadPhotoForm from "../../components/UploadPhotoForm/UploadPhotoForm";
@@ -14,17 +15,22 @@ import GalleryCard from "../../components/GalleryCard/GalleryCard";
 import GalleryDND from "../../components/GalleryDND/GalleryDND";
 import axios from "axios";
 
+const password = process.env.REACT_APP_ADMIN;
 class Admin extends Component {
   constructor() {
     super();
     this.state = {
       savedPhotos: [],
       aboutUsPhoto: "",
+      loggedin: false,
+      enteredPassword: "",
     };
   }
 
   componentDidMount() {
-    this.getPhotos();
+    if (this.state.loggedin) {
+      this.getPhotos();
+    }
   }
 
   handleInputChange = (event) => {
@@ -36,7 +42,6 @@ class Admin extends Component {
     this.setState({
       [name]: value,
     });
-    console.log(value, name);
   };
 
   onClickHandler = (event) => {
@@ -53,12 +58,14 @@ class Admin extends Component {
     );
     this.dbGet(`/api/other`).then((response) => {
       console.log(response.data);
-      this.setState(
-        {
-          aboutUsPhoto: response.data[0].aboutUsPhoto,
-        },
-        console.log(this.state)
-      );
+      if (response.data.length > 0) {
+        this.setState(
+          {
+            aboutUsPhoto: response.data[0].aboutUsPhoto,
+          },
+          console.log(this.state)
+        );
+      }
     });
   };
   updateDB = (state) => {
@@ -87,51 +94,77 @@ class Admin extends Component {
     }
     return body;
   };
+  login = (e) => {
+    e.preventDefault();
+    console.log(this.state.enteredPassword, password);
+    if (this.state.enteredPassword === password) {
+      this.setState({
+        loggedin: true,
+      });
+    }
+  };
 
   render() {
     return (
       <Container className="container-block">
         <h1>Admin</h1>
-
-        <Row>
-          <h3>Add a Photo</h3>
-          <UploadPhotoForm />
-        </Row>
-        <Row>
-          <h3>Saved Photos</h3>
-          {this.state.savedPhotos.map((photo, index) => (
-            <GalleryCard photo={photo} key={index}></GalleryCard>
-          ))}
-        </Row>
-        <Row>
-          <h3>Assets for Pages</h3>
+        {this.state.loggedin ? (
+          <div>
+            <Row>
+              <h3>Add a Photo</h3>
+              <UploadPhotoForm />
+            </Row>
+            <Row>
+              <h3>Saved Photos</h3>
+              {this.state.savedPhotos.map((photo, index) => (
+                <GalleryCard photo={photo} key={index}></GalleryCard>
+              ))}
+            </Row>
+            <Row>
+              <h3>Assets for Pages</h3>
+              <Form>
+                <FormGroup>
+                  <Label for="exampleCustomSelect">About Us Picture</Label>
+                  <CustomInput
+                    type="select"
+                    id="exampleCustomSelect"
+                    name="aboutUsPhoto"
+                    onChange={this.handleInputChange}
+                    value={this.state.aboutUsPhoto}
+                  >
+                    <option value="">Select</option>
+                    {this.state.savedPhotos.map((photo, index) => (
+                      <option key={index}>
+                        {photo.title} : {photo.photoInfo.name}
+                      </option>
+                    ))}
+                  </CustomInput>
+                </FormGroup>
+                <Button type="submit" onClick={this.onClickHandler}>
+                  Save
+                </Button>
+              </Form>
+            </Row>
+            <Row>
+              <h3>Gallery Ordering</h3>
+              <GalleryDND savedPhotos={this.state.savedPhotos} />
+            </Row>
+          </div>
+        ) : (
           <Form>
             <FormGroup>
-              <Label for="exampleCustomSelect">About Us Picture</Label>
-              <CustomInput
-                type="select"
-                id="exampleCustomSelect"
-                name="aboutUsPhoto"
+              <Label for="examplePassword">Please enter your password</Label>
+              <Input
+                value={this.state.enteredPassword}
+                type="text"
+                name="enteredPassword"
+                id="examplePassword"
                 onChange={this.handleInputChange}
-                value={this.state.aboutUsPhoto}
-              >
-                <option value="">Select</option>
-                {this.state.savedPhotos.map((photo, index) => (
-                  <option key={index}>
-                    {photo.title} : {photo.photoInfo.name}
-                  </option>
-                ))}
-              </CustomInput>
+              />
+              <Button onClick={this.login}>Submit</Button>
             </FormGroup>
-            <Button type="submit" onClick={this.onClickHandler}>
-              Save
-            </Button>
           </Form>
-        </Row>
-        <Row>
-          <h3>Gallery Ordering</h3>
-          <GalleryDND savedPhotos={this.state.savedPhotos} />
-        </Row>
+        )}
       </Container>
     );
   }

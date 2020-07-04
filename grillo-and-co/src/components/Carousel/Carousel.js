@@ -1,10 +1,10 @@
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import React, { Component } from "react";
 // import Slider from "react-animated-slider";
 // // import Carousel from "react-bootstrap/Carousel";
 // // import "react-animated-slider/build/horizontal.css";
 import { Link } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 import "./style.css";
 
@@ -39,14 +39,18 @@ class CarouselP extends Component {
         infiniteLoop={true}
         transitionTime={1000}
         stopOnHover={true}
+        //dynamicHeight={true}
+        showThumbs={false}
         // renderItem={customRenderItem}
         // renderThumbs={customRenderThumb}
+        className="carousel-div"
       >
         <div className="carousel-image">
           <Link to={`/aboutus`}>
             <img
               className="img-box"
-              src={require(`../../images/award winning design.jpg`)}
+              src={require(`../../images/Pepperwood.jpg`)}
+              alt="pepperwood dining table radial"
             ></img>
             <div className="text">
               <h2>Award Winning Designs</h2>
@@ -55,8 +59,20 @@ class CarouselP extends Component {
           </Link>
         </div>
         <div className="carousel-image">
+          <Link to={`/aboutus`}>
+            <img
+              className="img-box"
+              src={require(`../../images/Dovetails and Inlays.jpeg`)}
+              alt="dovetails inlays entryway table"
+            ></img>
+          </Link>
+        </div>
+        <div className="carousel-image">
           <Link to={`/gallery`}>
-            <img src={require(`../../images/pepperwood table.jpg`)}></img>
+            <img
+              src={require(`../../images/oak farmhouse desk.JPG`)}
+              alt="oak farmhouse desk"
+            ></img>
             <div className="text">
               <h2>Functional Art</h2>
               <p style={{ textAlign: "center" }}>
@@ -65,10 +81,65 @@ class CarouselP extends Component {
             </div>
           </Link>
         </div>
+
         <div className="carousel-image">
-          <Link to={`/faq`}>
+          <Link to={`/contactus`}>
             <img
-              src={require(`../../images/planing wood in workshop.jpg`)}
+              className="img-box"
+              src={require(`../../images/walnut coffee table in the sun.JPG`)}
+              alt="walnut coffee table in the sun"
+            ></img>
+            <div className="text">
+              <h2>Custom Designs</h2>
+              <p style={{ textAlign: "center" }}>
+                Send us a request for a design of your own
+              </p>
+            </div>
+          </Link>
+        </div>
+
+        <div className="carousel-image">
+          <Link to={`/gallery`}>
+            <img
+              className="img-box"
+              src={require(`../../images/dovetail in writing desk.JPG`)}
+              alt="dovetail writing desk"
+            ></img>
+          </Link>
+        </div>
+        <div className="carousel-image">
+          <Link to={`/gallery`}>
+            <img
+              className="img-box"
+              src={require(`../../images/kaylee desk.JPG`)}
+              alt="rounded leg desk"
+            ></img>
+          </Link>
+        </div>
+        <div className="carousel-image">
+          <Link to={`/gallery`}>
+            <img
+              src={require(`../../images/windsor chair.JPG`)}
+              alt="windsor chair"
+            ></img>
+          </Link>
+        </div>
+        <div className="carousel-image">
+          <Link to={`/gallery`}>
+            <img
+              className="img-box"
+              src={require(`../../images/Parquetry Record Credenza.jpeg`)}
+              alt="parquetry record credenza"
+            ></img>
+          </Link>
+        </div>
+
+        <div className="carousel-image">
+          <Link to={`/gallery`}>
+            <img
+              className="img-box"
+              src={require(`../../images/Detail Plant Stand.jpeg`)}
+              alt="veneer plant wall art"
             ></img>
             <div className="text">
               <h2>Hand Craftsmanship</h2>
@@ -76,6 +147,15 @@ class CarouselP extends Component {
                 Get more information on woodworking
               </p>
             </div>
+          </Link>
+        </div>
+        <div className="carousel-image">
+          <Link to={`/gallery`}>
+            <img
+              className="img-box"
+              src={require(`../../images/console table.jpg`)}
+              alt="walnut birds eye maple console table"
+            ></img>
           </Link>
         </div>
       </Carousel>

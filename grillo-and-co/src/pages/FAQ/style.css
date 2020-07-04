@@ -21,3 +21,12 @@ p {
   text-align: left;
   font-size: larger;
 }
+@media screen and (max-width: 1600px) {
+  h3 {
+    font-size: medium;
+  }
+  p {
+    font-size: small;
+    margin: 1vh;
+  }
+}

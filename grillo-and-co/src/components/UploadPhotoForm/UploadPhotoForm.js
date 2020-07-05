@@ -30,10 +30,8 @@ class UploadPhotoForm extends Component {
     this.setState({
       maxGalleryOrder: this.props.maxGalleryOrder,
     });
-    console.log(this.props.maxGalleryOrder);
   }
   static getDerivedStateFromProps(props, state) {
-    console.log("this is checking", props, state);
     if (props.maxGalleryOrder !== state.maxGalleryOrder) {
       return {
         maxGalleryOrder: props.galleryOrder,
@@ -74,7 +72,6 @@ class UploadPhotoForm extends Component {
         // then print response status
         console.log(res.statusText);
       });
-    console.log(!this.props.modal);
     if (!this.props.modal) {
       this.updateDB(this.state);
       // this.updateCard();

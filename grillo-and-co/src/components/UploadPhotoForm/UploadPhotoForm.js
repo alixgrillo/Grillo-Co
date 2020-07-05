@@ -77,7 +77,7 @@ class UploadPhotoForm extends Component {
     console.log(!this.props.modal);
     if (!this.props.modal) {
       this.updateDB(this.state);
-      this.updateCard();
+      // this.updateCard();
     } else {
       this.updatePostDB(this.state);
     }

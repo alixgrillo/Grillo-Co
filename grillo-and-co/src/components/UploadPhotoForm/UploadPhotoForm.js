@@ -4,15 +4,18 @@ import "./style.css";
 import axios from "axios";
 
 class UploadPhotoForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       id: "",
       selectedFile: "",
       title: "",
       description: "",
       keyword: "",
+      galleryOrder: 0,
+      maxGalleryOrder: 0,
     };
+    //this.updateCard = this.props.updateCard().bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +27,20 @@ class UploadPhotoForm extends Component {
         keyword: this.props.keyword,
       });
     }
+    this.setState({
+      maxGalleryOrder: this.props.maxGalleryOrder,
+    });
+    console.log(this.props.maxGalleryOrder);
+  }
+  static getDerivedStateFromProps(props, state) {
+    console.log("this is checking", props, state);
+    if (props.maxGalleryOrder !== state.maxGalleryOrder) {
+      return {
+        maxGalleryOrder: props.galleryOrder,
+      };
+    }
+    // Return null to indicate no change to state.
+    return null;
   }
 
   onChangeHandler = (event) => {
@@ -49,22 +66,33 @@ class UploadPhotoForm extends Component {
     const data = new FormData();
 
     data.append("file", this.state.selectedFile);
-    axios.post("/upload", data, {
-      // receive two parameter endpoint url ,form data
-    });
-    // .then((res) => {
-    //   // then print response status
-    //   console.log(res.statusText);
-    // });
+    axios
+      .post("/upload", data, {
+        // receive two parameter endpoint url ,form data
+      })
+      .then((res) => {
+        // then print response status
+        console.log(res.statusText);
+      });
+    console.log(!this.props.modal);
     if (!this.props.modal) {
       this.updateDB(this.state);
+      this.updateCard();
     } else {
       this.updatePostDB(this.state);
     }
+
+    this.setState({
+      selectedFile: "",
+      title: "",
+      description: "",
+      keyword: "",
+    });
   };
 
   updatePostDB = (state) => {
     // POST request using fetch inside useEffect React hook
+
     const requestOptions = {
       title: state.title,
       description: state.description,
@@ -92,6 +120,7 @@ class UploadPhotoForm extends Component {
       description: state.description,
       keyword: state.keyword,
       photoInfo: { name: state.selectedFile.name },
+      galleryOrder: this.props.maxGalleryOrder + 1,
     };
     this.db(requestOptions);
     // empty dependency array means this effect will only run once (like componentDidMount in classes)

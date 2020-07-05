@@ -13,6 +13,7 @@ import "./style.css";
 import UploadPhotoForm from "../../components/UploadPhotoForm/UploadPhotoForm";
 import GalleryCard from "../../components/GalleryCard/GalleryCard";
 import GalleryDND from "../../components/GalleryDND/GalleryDND";
+import PhotoOrder from "../../components/PhotoOrder/PhotoOrder";
 import axios from "axios";
 
 const password = process.env.REACT_APP_ADMIN;
@@ -25,6 +26,7 @@ class Admin extends Component {
       loggedin: false,
       enteredPassword: "",
       photosToOrder: [],
+      maxGalleryOrder: 0,
     };
   }
 
@@ -59,7 +61,12 @@ class Admin extends Component {
     this.updateDB(this.state);
   };
   getPhotos = () => {
-    this.dbGet(`/api/adminSavedPhoto`).then((response) =>
+    this.dbGet(`/api/adminSavedPhoto`).then((response) => {
+      console.log(
+        response.data.reduce((prev, current) =>
+          prev.y > current.y ? prev : current
+        ).galleryOrder
+      );
       this.setState({
         savedPhotos: response.data.sort((a, b) =>
           a.galleryOrder > b.galleryOrder ? 1 : -1
@@ -68,8 +75,14 @@ class Admin extends Component {
           .filter((a) => a.inGallery)
           .sort((a, b) => (a.galleryOrder > b.galleryOrder ? 1 : -1)),
         loggedin: true,
-      })
-    );
+        maxGalleryOrder:
+          response.data.length == 0
+            ? 0
+            : response.data.reduce((prev, current) =>
+                prev.y > current.y ? prev : current
+              ).galleryOrder,
+      });
+    });
     this.dbGet(`/api/other`).then((response) => {
       if (response.data.length > 0) {
         this.setState({
@@ -123,7 +136,10 @@ class Admin extends Component {
           <div>
             <Row>
               <h3>Add a Photo</h3>
-              <UploadPhotoForm />
+              <UploadPhotoForm
+                maxGalleryOrder={this.state.maxGalleryOrder}
+                updateCard={this.updateCard}
+              />
             </Row>
             <Row>
               <h3>Saved Photos</h3>
@@ -162,7 +178,8 @@ class Admin extends Component {
             </Row>
             <Row>
               <h3>Gallery Ordering</h3>
-              <GalleryDND savedPhotos={this.state.photosToOrder} />
+              {/* <GalleryDND savedPhotos={this.state.photosToOrder} /> */}
+              <PhotoOrder savedPhotos={this.state.photosToOrder} />
             </Row>
           </div>
         ) : (

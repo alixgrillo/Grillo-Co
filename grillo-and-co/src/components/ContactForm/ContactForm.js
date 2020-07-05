@@ -57,8 +57,8 @@ class ContactForm extends Component {
     ) {
       const requestOptions = this.state;
 
-      // this.dbPost(requestOptions).then((data) => console.log(data));
-      this.dbPost(requestOptions);
+      this.dbPost(requestOptions).then((data) => console.log(data));
+      //this.dbPost(requestOptions);
     }
   };
   dbPost = async (requestOptions) => {
@@ -66,6 +66,13 @@ class ContactForm extends Component {
     const body = await response;
     if (response.status !== 200) {
       throw Error(body.message);
+    } else {
+      this.setState({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
     }
     return body;
   };
@@ -83,7 +90,7 @@ class ContactForm extends Component {
   handleValidSubmit(event, values) {
     this.setState({
       validation: {
-        email: values.email,
+        email: this.state.email === "",
       },
     });
   }
@@ -136,7 +143,7 @@ class ContactForm extends Component {
               invalid={this.state.validation.email}
             />
 
-            <FormFeedback invalid={this.state.validation.email}>
+            <FormFeedback invalid={this.state.validation.email.toString()}>
               Please provide a valid email so we know how to contact you.
             </FormFeedback>
           </Col>

@@ -59,7 +59,7 @@ const GalleryCardDisplay = (props) => {
           src={require(`../../images/${props.photo.photoInfo.name}`)}
           alt={props.photo.keyword}
         />
-        <CardBody>
+        <CardBody className="clearfix">
           <CardTitle className="gallery-title">{props.photo.title}</CardTitle>
           {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
           <CardText className="gallery-description">

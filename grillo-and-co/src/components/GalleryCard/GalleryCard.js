@@ -76,10 +76,11 @@ const GalleryCard = (props) => {
 
   return (
     <div style={card}>
-      <Card>
+      <Card className="gallery-card">
         <CardImg
           top
           width="30%"
+          className="gallery-image"
           src={require(`../../images/${props.photo.photoInfo.name}`)}
           alt={props.photo.keyword}
         />
@@ -104,7 +105,12 @@ const GalleryCard = (props) => {
           </FormGroup>
         </CardBody>
       </Card>
-      <Modal isOpen={modal} toggle={toggle} className={className}>
+      <Modal
+        isOpen={modal}
+        toggle={toggle}
+        className={className}
+        id="modal-gallery"
+      >
         <ModalHeader toggle={toggle}>Update Information</ModalHeader>
         <ModalBody>
           <UploadPhotoForm

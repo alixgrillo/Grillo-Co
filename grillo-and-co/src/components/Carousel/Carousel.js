@@ -54,7 +54,7 @@ class CarouselP extends Component {
           >
             <img
               className="img-box"
-              src={require(`../../images/Pepperwood.jpg`)}
+              src={require(`../../images/Pepperwood-min.jpg`)}
               alt="pepperwood dining table radial"
             ></img>
             <div className="text">
@@ -72,7 +72,7 @@ class CarouselP extends Component {
           >
             <img
               className="img-box"
-              src={require(`../../images/Dovetails and Inlays.jpeg`)}
+              src={require(`../../images/Dovetails and Inlays-min.jpeg`)}
               alt="dovetails inlays entryway table"
             ></img>
           </Link>
@@ -85,7 +85,7 @@ class CarouselP extends Component {
             onClick={this.handleClick}
           >
             <img
-              src={require(`../../images/oak farmhouse desk.JPG`)}
+              src={require(`../../images/oak farmhouse desk-min.JPG`)}
               alt="oak farmhouse desk"
             ></img>
             <div className="text">
@@ -106,7 +106,7 @@ class CarouselP extends Component {
           >
             <img
               className="img-box"
-              src={require(`../../images/walnut coffee table in the sun.JPG`)}
+              src={require(`../../images/walnut coffee table in the sun-min.JPG`)}
               alt="walnut coffee table in the sun"
             ></img>
             <div className="text">
@@ -127,7 +127,7 @@ class CarouselP extends Component {
           >
             <img
               className="img-box"
-              src={require(`../../images/dovetail in writing desk.JPG`)}
+              src={require(`../../images/dovetail in writing desk-min.JPG`)}
               alt="dovetail writing desk"
             ></img>
           </Link>
@@ -154,7 +154,7 @@ class CarouselP extends Component {
             onClick={this.handleClick}
           >
             <img
-              src={require(`../../images/windsor chair.JPG`)}
+              src={require(`../../images/windsor chair-min.JPG`)}
               alt="windsor chair"
             ></img>
           </Link>
@@ -168,7 +168,7 @@ class CarouselP extends Component {
           >
             <img
               className="img-box"
-              src={require(`../../images/Parquetry Record Credenza.jpeg`)}
+              src={require(`../../images/Parquetry Record Credenza-min.jpeg`)}
               alt="parquetry record credenza"
             ></img>
           </Link>
@@ -183,7 +183,7 @@ class CarouselP extends Component {
           >
             <img
               className="img-box"
-              src={require(`../../images/Detail Plant Stand.jpeg`)}
+              src={require(`../../images/Detail Plant Stand-min.jpeg`)}
               alt="veneer plant wall art"
             ></img>
             <div className="text">
@@ -203,7 +203,7 @@ class CarouselP extends Component {
           >
             <img
               className="img-box"
-              src={require(`../../images/console table.jpg`)}
+              src={require(`../../images/console table-min.jpg`)}
               alt="walnut birds eye maple console table"
             ></img>
           </Link>

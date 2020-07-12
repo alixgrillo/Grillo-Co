@@ -141,7 +141,7 @@ class CarouselP extends Component {
           >
             <img
               className="img-box"
-              src={require(`../../images/kaylee desk.JPG`)}
+              src={require(`../../images/kaylee desk-min.JPG`)}
               alt="rounded leg desk"
             ></img>
           </Link>

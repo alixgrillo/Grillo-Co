@@ -44,6 +44,27 @@ class HomePage extends Component {
           {/* </Container> */}
           <div className="pages">
             {/* <Container className="container-block"> */}
+            <h2 style={{ marginBottom: "200px;" }}>Craftsman at Work</h2>
+            <p style={{ textAlign: "center" }}>
+              {" "}
+              Take a peek inside our shop and see what we are up to
+            </p>
+
+            <Row style={{ paddingTop: "25px" }}>
+              {/* <!-- Place <div> tag where you want the feed to appear --> */}
+              <div id="curator-feed-default-feed-layout">
+                <a
+                  href="https://curator.io"
+                  target="_blank"
+                  class="crt-logo crt-tag"
+                >
+                  Powered by Curator.io
+                </a>
+              </div>
+            </Row>
+          </div>
+          <div className="pages">
+            {/* <Container className="container-block"> */}
             <h2>Custom Wood Furniture</h2>
             <Row>
               <Col lg={6}>

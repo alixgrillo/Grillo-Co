@@ -11,6 +11,7 @@ import Gallery from "./pages/Gallery/Gallery";
 import Admin from "./pages/Admin/Admin";
 import Footer from "./components/Footer/Footer";
 import NavbarComponent from "./components/NavBar/NavBar";
+
 import FAQ from "./pages/FAQ/FAQ";
 import ForSale from "./pages/ForSale/ForSale";
 // import MobileResponsive from "./components/MobileResponsive/MobileResponsive";
@@ -42,6 +43,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <Footer />
           <NavbarComponent
             width={this.state.width}
             activeLink={this.state.activeLink}
@@ -68,7 +70,7 @@ class App extends Component {
               )}
             ></Route>
           </Switch>
-          <Footer />
+
           {/* <MobileResponsive
             loadMobile={this.setMobileResponsive}
           ></MobileResponsive> */}

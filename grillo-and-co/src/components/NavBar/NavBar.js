@@ -58,7 +58,7 @@ class NavbarComponent extends Component {
       <div className="small-screen-nav">
         {this.props.width < 1600 ? (
           <div>
-            <Navbar dark>
+            <Navbar dark className="navbarzindex">
               <NavbarBrand>
                 {/* Grillo & Co */}
                 <img

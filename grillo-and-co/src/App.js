@@ -43,7 +43,6 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Footer />
           <NavbarComponent
             width={this.state.width}
             activeLink={this.state.activeLink}
@@ -70,7 +69,7 @@ class App extends Component {
               )}
             ></Route>
           </Switch>
-
+          <Footer />
           {/* <MobileResponsive
             loadMobile={this.setMobileResponsive}
           ></MobileResponsive> */}

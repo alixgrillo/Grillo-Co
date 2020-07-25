@@ -93,6 +93,9 @@ ul {
 .light {
   background-color: #75645b;
 }
+.navbarzindex {
+  z-index: 1000;
+}
 @media screen and (max-width: 1600px) {
   .navbar {
     position: inherit;

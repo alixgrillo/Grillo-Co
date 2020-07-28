@@ -29,6 +29,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
+const enforceHttps = (req, res, next) => {
+  if (
+    !req.secure &&
+    req.get("x-forwarded-proto") !== "https" &&
+    process.env.NODE_ENV === "production"
+  ) {
+    res.redirect(301, `https://${req.get("host")}${req.url}`);
+  } else {
+    next();
+  }
+};
+
+app.use(enforceHttps);
+
 // // Serve up static assets (usually on heroku)
 // if (process.env.NODE_ENV === "production") {
 //   //app.use(express.static('client/build'));

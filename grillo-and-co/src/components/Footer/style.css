@@ -48,7 +48,12 @@ body {
 .profile-links:hover {
   color: #3b160d;
 }
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1850px) {
+  .footer {
+    max-width: 72%;
+  }
+}
+@media screen and (max-width: 1223px) {
   .footer {
     position: relative;
     font-size: x-small;

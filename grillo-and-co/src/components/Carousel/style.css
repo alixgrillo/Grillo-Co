@@ -36,8 +36,12 @@
   background: rgba(169, 157, 153, 0.7);
   padding: 10px;
 }
-
 @media (max-width: 1600px) {
+  .carousel-div {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1223px) {
   .carousel-div {
     max-width: 100%;
   }

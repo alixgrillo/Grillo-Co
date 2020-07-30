@@ -56,7 +56,7 @@ class NavbarComponent extends Component {
   render() {
     return (
       <div className="small-screen-nav">
-        {this.props.width < 1600 ? (
+        {this.props.width < 1223 ? (
           <div>
             <Navbar dark className="navbarzindex">
               <NavbarBrand>

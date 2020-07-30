@@ -15,7 +15,7 @@ const MobileResponsive = (props) => {
   //   const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
   // const isPhone = useMediaQuery({ query: "(max-device-width: 480px)" });
   // const isTablet = useMediaQuery({ query: "(max-device-width: 1024px)" });
-  const mobile = useMediaQuery({ query: "(max-device-width: 1600px)" });
+  const mobile = useMediaQuery({ query: "(max-device-width: 1223px)" });
 
   useEffect(() => {
     if (mobile) {

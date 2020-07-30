@@ -24,7 +24,12 @@ body {
 a {
   color: #3b160c;
 }
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1850px) {
+  .container-block {
+    max-width: 70%;
+  }
+}
+@media screen and (max-width: 1223px) {
   .container-block {
     margin-top: 20vh;
   }

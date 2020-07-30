@@ -56,7 +56,7 @@
 .modal-gallery {
   max-height: 80vh;
 }
-@media (max-width: 1600px) {
+@media (max-width: 1223px) {
   .gallery-card {
     width: 100%;
   }

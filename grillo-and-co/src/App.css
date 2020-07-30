@@ -31,6 +31,7 @@ a {
 }
 @media screen and (max-width: 1223px) {
   .container-block {
+    max-width: 100%;
     margin-top: 20vh;
   }
 }

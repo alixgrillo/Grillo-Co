@@ -18,7 +18,7 @@ h3 {
   font-size: 28px;
 }
 p {
-  text-align: left;
+  text-align: justify;
   font-size: larger;
 }
 @media screen and (max-width: 1223px) {

@@ -36,10 +36,10 @@ h1 {
 }
 @media screen and (max-width: 1223px) {
   h1 {
-    font-size: large;
+    font-size: 22px;
   }
   h2 {
-    font-size: medium;
+    font-size: 20px;
   }
 }
 @media screen and (max-width: 470px) {

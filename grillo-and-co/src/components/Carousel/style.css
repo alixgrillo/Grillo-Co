@@ -46,10 +46,10 @@
     max-width: 100%;
   }
   .text h2 {
-    font-size: small;
+    font-size: 16px;
   }
   .text p {
-    font-size: smaller;
+    font-size: 12px;
   }
   .carousel-image {
     position: relative;

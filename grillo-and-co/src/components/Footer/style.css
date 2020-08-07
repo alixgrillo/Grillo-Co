@@ -56,7 +56,7 @@ body {
 @media screen and (max-width: 1223px) {
   .footer {
     position: relative;
-    font-size: x-small;
+    font-size: 12px;
   }
   .footer-text {
     padding: 0.5vh;

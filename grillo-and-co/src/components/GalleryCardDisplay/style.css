@@ -7,6 +7,10 @@
   max-height: 80vh;
   width: auto;
 }
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
 
 .gallery-image:hover {
   transition: transform 2s ease;
@@ -55,6 +59,11 @@
 }
 .modal-gallery {
   max-height: 80vh;
+}
+@media (max-width: 1850px) {
+  .gallery-image {
+    width: 80%;
+  }
 }
 @media (max-width: 1223px) {
   .gallery-card {

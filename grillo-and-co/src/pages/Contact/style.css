@@ -1,5 +1,5 @@
 ul li {
-  font-size: large;
+  font-size: 16px;
   text-align: left;
   margin-bottom: 5px;
 }
@@ -11,8 +11,16 @@ ul li {
   color: white;
   padding: 10px 30px;
 }
+.map-div {
+  padding-top: 20px;
+}
 @media screen and (max-width: 1223px) {
   ul li {
-    font-size: smaller;
+    font-size: 16px;
+  }
+  .contact-form {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
   }
 }

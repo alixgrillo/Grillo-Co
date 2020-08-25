@@ -47,77 +47,21 @@ class CarouselP extends Component {
       >
         <div className="carousel-image">
           <Link
-            to={`/aboutus`}
-            data-user="about"
-            value="about"
+            to={`/gallery`}
+            data-user="gallery"
+            value="gallery"
             onClick={this.handleClick}
           >
             <img
-              className="img-box"
-              src={require(`../../images/Pepperwood-min.jpg`)}
-              alt="pepperwood dining table radial"
+              src={require(`../../images/windsor chair-min.JPG`)}
+              alt="windsor chair"
             ></img>
-            <div className="text">
-              <h2>Award Winning Designs</h2>
+            {/* <div className="text">
+              <h3>Award Winning Designs</h3>
               <p style={{ textAlign: "center" }}>Read more about Grillo & Co</p>
-            </div>
+            </div> */}
           </Link>
         </div>
-        <div className="carousel-image">
-          <Link
-            to={`/gallery`}
-            data-user="gallery"
-            value="gallery"
-            onClick={this.handleClick}
-          >
-            <img
-              className="img-box"
-              src={require(`../../images/Dovetails and Inlays-min.jpeg`)}
-              alt="dovetails inlays entryway table"
-            ></img>
-          </Link>
-        </div>
-        <div className="carousel-image">
-          <Link
-            to={`/gallery`}
-            data-user="gallery"
-            value="gallery"
-            onClick={this.handleClick}
-          >
-            <img
-              src={require(`../../images/oak farmhouse desk-min.JPG`)}
-              alt="oak farmhouse desk"
-            ></img>
-            <div className="text">
-              <h2>Functional Art</h2>
-              <p style={{ textAlign: "center" }}>
-                See more furniture by Grillo & Co
-              </p>
-            </div>
-          </Link>
-        </div>
-
-        <div className="carousel-image">
-          <Link
-            to={`/contactus`}
-            data-user="contact"
-            value="contact"
-            onClick={this.handleClick}
-          >
-            <img
-              className="img-box"
-              src={require(`../../images/walnut coffee table in the sun-min.JPG`)}
-              alt="walnut coffee table in the sun"
-            ></img>
-            <div className="text">
-              <h2>Custom Designs</h2>
-              <p style={{ textAlign: "center" }}>
-                Send us a request for a design of your own
-              </p>
-            </div>
-          </Link>
-        </div>
-
         <div className="carousel-image">
           <Link
             to={`/gallery`}
@@ -148,17 +92,73 @@ class CarouselP extends Component {
         </div>
         <div className="carousel-image">
           <Link
+            to={`/aboutus`}
+            data-user="about"
+            value="about"
+            onClick={this.handleClick}
+          >
+            <img
+              className="img-box"
+              src={require(`../../images/Pepperwood-min.jpg`)}
+              alt="pepperwood dining table radial"
+            ></img>
+          </Link>
+        </div>
+        <div className="carousel-image">
+          <Link
             to={`/gallery`}
             data-user="gallery"
             value="gallery"
             onClick={this.handleClick}
           >
             <img
-              src={require(`../../images/windsor chair-min.JPG`)}
-              alt="windsor chair"
+              className="img-box"
+              src={require(`../../images/Dovetails and Inlays-min.jpeg`)}
+              alt="dovetails inlays entryway table"
             ></img>
           </Link>
         </div>
+        <div className="carousel-image">
+          <Link
+            to={`/gallery`}
+            data-user="gallery"
+            value="gallery"
+            onClick={this.handleClick}
+          >
+            <img
+              src={require(`../../images/oak farmhouse desk-min.JPG`)}
+              alt="oak farmhouse desk"
+            ></img>
+            {/* <div className="text">
+              <h2>Functional Art</h2>
+              <p style={{ textAlign: "center" }}>
+                See more furniture by Grillo & Co
+              </p>
+            </div> */}
+          </Link>
+        </div>
+
+        <div className="carousel-image">
+          <Link
+            to={`/contactus`}
+            data-user="contact"
+            value="contact"
+            onClick={this.handleClick}
+          >
+            <img
+              className="img-box"
+              src={require(`../../images/walnut coffee table in the sun-min.JPG`)}
+              alt="walnut coffee table in the sun"
+            ></img>
+            {/* <div className="text">
+              <h2>Custom Designs</h2>
+              <p style={{ textAlign: "center" }}>
+                Send us a request for a design of your own
+              </p>
+            </div> */}
+          </Link>
+        </div>
+
         <div className="carousel-image">
           <Link
             to={`/gallery`}
@@ -186,12 +186,12 @@ class CarouselP extends Component {
               src={require(`../../images/Detail Plant Stand-min.jpeg`)}
               alt="veneer plant wall art"
             ></img>
-            <div className="text">
+            {/* <div className="text">
               <h2>Hand Craftsmanship</h2>
               <p style={{ textAlign: "center" }}>
                 Get more information on woodworking
               </p>
-            </div>
+            </div> */}
           </Link>
         </div>
         <div className="carousel-image">

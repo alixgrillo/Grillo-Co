@@ -60,7 +60,9 @@ const GalleryCardDisplay = (props) => {
           alt={props.photo.keyword}
         />
         <CardBody className="clearfix">
-          <CardTitle className="gallery-title">{props.photo.title}</CardTitle>
+          <CardTitle className="gallery-title">
+            <h4>{props.photo.title}</h4>
+          </CardTitle>
           {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
           <CardText className="gallery-description">
             {props.photo.description}

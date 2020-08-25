@@ -146,7 +146,7 @@ class NavbarComponent extends Component {
                         this.state.activeLink === "faq" ? "active-link" : "none"
                       }
                     >
-                      FAQ<br></br>
+                      How It Works<br></br>
                       <FontAwesome
                         name="question-circle"
                         size="lg"
@@ -154,7 +154,7 @@ class NavbarComponent extends Component {
                       />
                     </Link>
                   </NavItem>
-                  <NavItem>
+                  {/* <NavItem>
                     <Link
                       to={`/forsale`}
                       className="nav-link"
@@ -173,7 +173,7 @@ class NavbarComponent extends Component {
                         style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
                       />
                     </Link>
-                  </NavItem>
+                  </NavItem> */}
                   <NavItem>
                     <Link
                       to={`/contactus`}
@@ -197,14 +197,15 @@ class NavbarComponent extends Component {
                   <NavItem>
                     <Row>
                       <Col lg={5}></Col>
-                      <Col lg={1} className="nav-link-contact">
+                      <Col lg={3} className="nav-link-contact">
                         <FontAwesome
                           name="mobile-alt"
                           size="sm"
                           style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
                         />
-                      </Col>
-                      <Col lg={1} className="nav-link-contact">
+                        {"   "}
+                        {/* </Col>
+                      <Col lg={1} className="nav-link-contact"> */}
                         <a href="mailto:john@grilloandco.com">
                           <FontAwesome
                             name="envelope"
@@ -212,14 +213,15 @@ class NavbarComponent extends Component {
                             style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
                           />
                         </a>
-                      </Col>
-                      <Col lg={1} className="nav-link-contact">
+                        {"   "}
+                        {/* </Col>
+                      <Col lg={1} className="nav-link-contact"> */}
                         <a
                           href="http://www.instagram.com/grilloandco/"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <i className="fab fa-instagram"></i>
+                          <i className="fab fa-instagram fab-nav"></i>
                         </a>
                       </Col>
                     </Row>
@@ -311,7 +313,7 @@ class NavbarComponent extends Component {
                       this.state.activeLink === "faq" ? "active-link" : "none"
                     }
                   >
-                    FAQ<br></br>
+                    How It Works<br></br>
                     <FontAwesome
                       name="question-circle"
                       size="lg"
@@ -319,7 +321,7 @@ class NavbarComponent extends Component {
                     />
                   </Link>
                 </NavItem>
-                <NavItem>
+                {/* <NavItem>
                   <Link
                     to={`/forsale`}
                     className="nav-link"
@@ -336,7 +338,7 @@ class NavbarComponent extends Component {
                       style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
                     />
                   </Link>
-                </NavItem>
+                </NavItem> */}
                 <NavItem>
                   <Link
                     to={`/contactus`}

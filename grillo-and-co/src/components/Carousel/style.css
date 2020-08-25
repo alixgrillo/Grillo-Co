@@ -23,8 +23,9 @@
   position: absolute;
   /* top: 200px; */
   bottom: 40px;
-  left: 0;
-  width: 100%;
+  left: 20px;
+  width: 50%;
+  border-radius: 50%;
   font-weight: bold;
   text-shadow: -0.5px 0.5px 0 #a99d99, 0.5px 0.5px 0 #a99d99,
     0.5px -0.5px 0 #a99d99, -0.5px -0.5px 0 #a99d99;
@@ -33,12 +34,25 @@
   /* color: white; */
   /* font: bold 24px/45px Helvetica, Sans-Serif; */
 
-  background: rgba(169, 157, 153, 0.7);
-  padding: 10px;
+  background: rgba(161, 118, 104, 0.8);
+  padding: 30px;
 }
 @media (max-width: 1600px) {
   .carousel-div {
     max-width: 100%;
+  }
+  .carousel-image {
+    max-height: 80vh;
+  }
+}
+@media (max-height: 850px) {
+  .carousel-div {
+    max-width: 80%;
+  }
+}
+@media (max-height: 750px) {
+  .carousel-div {
+    max-width: 60%;
   }
 }
 @media (max-width: 1223px) {
@@ -68,5 +82,21 @@
     align-items: center;
     overflow: hidden;
     background-color: transparent;
+  }
+}
+@media (max-height: 1366px) and (max-width: 1024px) {
+  .carousel-div {
+    max-width: 80%;
+  }
+  .carousel-image {
+    max-height: 40vh;
+  }
+}
+@media (max-height: 736px) and (max-width: 414px) {
+  .carousel-div {
+    max-width: 100%;
+  }
+  .carousel-image {
+    max-height: 40vh;
   }
 }

@@ -17,16 +17,61 @@ h3 {
   text-align: left;
   font-size: 28px;
 }
-p {
+p,
+blockquote,
+ol li {
   text-align: justify;
-  font-size: larger;
+  font-size: 16px;
 }
+ol {
+  list-style: none;
+  counter-reset: mycounter;
+  padding: 0 50px;
+}
+ol li {
+  position: relative;
+  margin-left: 30px;
+  padding: 5px 0;
+  padding-bottom: 20px;
+}
+ol li:before {
+  content: counter(mycounter);
+  counter-increment: mycounter;
+  position: absolute;
+  /* top: 0; */
+  left: -50px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  background: #3b160c;
+  text-align: center;
+}
+.au {
+  display: inline-block;
+  border: 1px solid #ccc;
+  background: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px #888;
+  padding: 10px;
+}
+
 @media screen and (max-width: 1223px) {
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
   h3 {
     font-size: 20px;
   }
-  p {
+  p,
+  blockquote {
     font-size: 16px;
     margin: 1vh;
+  }
+  blockquote {
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }

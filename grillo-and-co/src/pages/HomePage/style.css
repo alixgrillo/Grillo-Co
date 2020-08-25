@@ -13,3 +13,44 @@
 .paddingtop {
   padding-top: 25px;
 }
+.contact-us-btn {
+  background-color: #3b160d;
+  color: white;
+  margin-bottom: 20px;
+}
+.contact-us-btn:hover {
+  background-color: #2a110e;
+}
+.home-page-image {
+  width: 100%;
+}
+.meet-john-image {
+  width: 60%;
+  border-radius: 50%;
+  margin: 25px;
+  float: right;
+}
+.meet-john {
+  border-radius: -50%;
+  width: 60%;
+  padding: 25px;
+  float: left;
+}
+@media screen and (max-width: 1600px) {
+  .meet-john-image {
+    width: 80%;
+    float: none;
+  }
+  .meet-john {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .meet-john-image {
+    width: 100%;
+    margin: 5px 0;
+  }
+  .meet-john {
+    padding: 5px;
+  }
+}

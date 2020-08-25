@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Container, Col, Row } from "reactstrap";
+import { Container, Col, Row, Button } from "reactstrap";
 import "./style.css";
 import CarouselP from "../../components/Carousel/Carousel";
-import Map from "../../components/Map/Map";
+
 import axios from "axios";
 
 class HomePage extends Component {
@@ -15,24 +15,39 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
-    axios.get("/api/carousel").then((res) => {
-      this.setState({ content: res.data });
-    });
+    // axios.get("/api/carousel").then((res) => {
+    //   this.setState({ content: res.data });
+    // });
+  }
+  handleContactClick() {
+    // this.props.setActiveLink("contact");
   }
 
   render() {
     return (
       <div>
         <Container className="container-block">
-          <h1>Welcome to Grillo & Co</h1>
+          <h1>Welcome to Grillo & Co: Custom Furniture Design</h1>
           <div className="pages pages-white">
             <p>
-              We make beautiful bespoke furniture for your home or work place.
-              Working almost entirely by commission, we custom design and
-              handmake each piece to your exact desire. The pieces of furniture
-              we make aren’t just ‘things’ but rather expressions and extensions
-              of your personality.
+              Grillo and Co creates beautiful bespoke furniture for your home or
+              workplace. Operating almost entirely by commission, we custom
+              design and hand make each piece to your exact specifications at
+              our workshop in Bend, Oregon. We will help you visualize your
+              ideas and, once you’re completely happy with the proposed design,
+              we hand-craft your unique heirloom piece of furniture.
             </p>
+            <p>
+              {" "}
+              These custom wood furniture pieces are designed to be more than
+              “things”: they are an expression of your personality and a unique
+              way to tell your story.
+            </p>
+            <Link to={`/contactus`} onClick={this.handleContactClick}>
+              <Button className="contact-us-btn">
+                Contact Us to Discuss Your Project
+              </Button>
+            </Link>
           </div>
 
           <div className="carousel">
@@ -43,11 +58,42 @@ class HomePage extends Component {
           </div>
           {/* </Container> */}
           <div className="pages">
+            <h2>Meet John Grillo, Master Woodworker</h2>
+            <Row>
+              <Col lg={6}>
+                <div className="home-page-image">
+                  <img
+                    className="img-box meet-john-image"
+                    src={require(`../../images/Chippendale Student Images - April 2018 -375-min.jpg`)}
+                    alt="John Grillo sits at a tool bench in his wood shop while hand planing a board of wood"
+                  ></img>
+                </div>
+              </Col>
+              <Col lg={6}>
+                <div className="meet-john">
+                  <p>
+                    Award-winning craftsman John Grillo has been honing his
+                    professional woodworking skills for the past 5 years. He is
+                    a proud member of the Fine Furniture Guild and now creates
+                    beautiful freestanding custom furniture form his workshop in
+                    Bend, Oregon.{" "}
+                  </p>
+                  <p>
+                    {" "}
+                    <Link to={`/aboutus`}>
+                      Learn more about John’s story here.
+                    </Link>
+                  </p>
+                </div>
+              </Col>
+            </Row>
+          </div>
+          <div className="pages">
             {/* <Container className="container-block"> */}
             <h2 style={{ marginBottom: "200px;" }}>Craftsman at Work</h2>
             <p style={{ textAlign: "center" }}>
               {" "}
-              Take a peek inside our shop and see what we are up to
+              Take a peek inside our shop and see what we are up to!
             </p>
 
             <Row style={{ paddingTop: "25px" }}>
@@ -63,8 +109,9 @@ class HomePage extends Component {
               </div>
             </Row>
           </div>
-          <div className="pages">
-            {/* <Container className="container-block"> */}
+
+          {/* <div className="pages">
+         
             <h2>Custom Wood Furniture</h2>
             <Row>
               <Col lg={6}>
@@ -85,7 +132,7 @@ class HomePage extends Component {
                 </p>
               </Col>
             </Row>
-          </div>
+          </div> */}
         </Container>
       </div>
     );

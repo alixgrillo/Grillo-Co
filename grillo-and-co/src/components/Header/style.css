@@ -9,7 +9,7 @@ h1 {
   text-transform: capitalize;
   color: #2a110e;
   text-shadow: 2px 2px 4px #a99d99;
-  font-size: 4vh;
+  font-size: 40px;
   /* max-width: 50%;
   display: block;
   align-content: center; */
@@ -36,7 +36,7 @@ h1 {
 }
 @media screen and (max-width: 1223px) {
   h1 {
-    font-size: 22px;
+    font-size: 30px;
   }
   h2 {
     font-size: 20px;

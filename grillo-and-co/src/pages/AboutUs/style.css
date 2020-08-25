@@ -1,12 +1,15 @@
 .about-us-photo {
   width: 60%;
   margin: 20px;
+  margin-bottom: 40px;
 }
 .pages {
   background-color: rgba(169, 157, 153, 0.5);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 30px;
   margin-bottom: 50px;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 .pages-white {
   background-color: rgba(169, 157, 153, 0.5);
@@ -14,12 +17,24 @@
 .img-box {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+blockquote {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.award-picture {
+  width: 100%;
+  padding: 20px;
+}
 @media screen and (max-width: 1223px) {
   .about-us-photo {
-    width: 100%;
+    width: 90%;
     margin: 5px;
   }
-  blockquote {
-    font-size: small;
+  .pages {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .title-under-picture {
+    margin-top: 15px;
   }
 }

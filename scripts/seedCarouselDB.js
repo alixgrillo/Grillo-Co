@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const db = require("../database/models");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/grilloco");
+mongoose.connect(process.env.DB_URI || "mongodb://localhost/grilloco");
 
 const carouselSeed = [
   {

@@ -58,19 +58,18 @@ simulaneously.
 - Node.js v10.16.3
 - Node packages (Server):
 
-* axios v0.19.2 (https://www.npmjs.com/package/axios)
+  - axios v0.19.2 (https://www.npmjs.com/package/axios)
+  - body-parser v1.19.0 (https://www.npmjs.com/package/body-parser)
+  - concurrently v5.1.0 (npmjs.com/package/concurrently)
+  - cors v.2.8.5 (https://www.npmjs.com/package/cors)
+  - dotenv v8.2.0 (https://www.npmjs.com/package/dotenv)
+  - express v4.17.1 (https://www.npmjs.com/package/express)
+  - mongoose v5.9.3 (https://www.npmjs.com/package/mongoose)
+  - multer v1.4.2 (https://www.npmjs.com/package/multer)
+  - nodemon v2.0.2 (https://www.npmjs.com/package/nodemon)
+  - path v0.12.7 (https://www.npmjs.com/package/path)
 
-* body-parser v1.19.0 (https://www.npmjs.com/package/body-parser)
-* concurrently v5.1.0 (npmjs.com/package/concurrently)
-* cors v.2.8.5 (https://www.npmjs.com/package/cors)
-* dotenv v8.2.0 (https://www.npmjs.com/package/dotenv)
-* express v4.17.1 (https://www.npmjs.com/package/express)
-* mongoose v5.9.3 (https://www.npmjs.com/package/mongoose)
-* multer v1.4.2 (https://www.npmjs.com/package/multer)
-* nodemon v2.0.2 (https://www.npmjs.com/package/nodemon)
-* path v0.12.7 (https://www.npmjs.com/package/path)
-
-* Node packages (Client, unless already specified above):
+- Node packages (Client, unless already specified above):
 
   - @fortawesome/fontawesome-svg-core v1.2.28 (https://www.npmjs.com/package/@fortawesome/fontawesome-svg-core)
   - @fortawesome/free-solid-svg-icons v.5.13.0 (https://www.npmjs.com/package/@fortawesome/free-solid-svg-icons)
@@ -97,11 +96,11 @@ simulaneously.
   - reactstrap v8.4.1 (https://www.npmjs.com/package/reactstrap)
   - styled-components v5.1.1 (https://www.npmjs.com/package/styled-components)
 
-* MongoDB (Atlas: MongoDB)
-* Bootstrap 4.4.1
-* Font Awesome
-* Google Maps
-* Deployed on Heroku
+- MongoDB (Atlas: MongoDB)
+- Bootstrap 4.4.1
+- Font Awesome
+- Google Maps
+- Deployed on Heroku
 
 ## Acknowledgements
 

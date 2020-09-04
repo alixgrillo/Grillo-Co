@@ -82,7 +82,7 @@ class AboutUs extends Component {
               <img
                 className="award-picture"
                 src={require(`../../images/Pepperwood-min.jpg`)}
-                alt="windsor chair"
+                alt="Contemporary pedestal dining table designed by Grillo & Co made from american black walnut and exotic pepperwood burl arranged in a bookmatched, radial pattern to create a kaleidoscope effect. This custom piece of furniture won the Demarco Prize for contemporary art in furniture making."
               ></img>
             </Col>
             <h3>Features</h3>

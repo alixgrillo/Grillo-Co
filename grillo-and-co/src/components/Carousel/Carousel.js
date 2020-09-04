@@ -54,7 +54,7 @@ class CarouselP extends Component {
           >
             <img
               src={require(`../../images/windsor chair-min.JPG`)}
-              alt="windsor chair"
+              alt="The detail of a custom made windsor chair by John Grillo. The light shines down on the smooth edges of the chair arms with the windsor chair iconic chair back fanning out."
             ></img>
             {/* <div className="text">
               <h3>Award Winning Designs</h3>
@@ -72,7 +72,7 @@ class CarouselP extends Component {
             <img
               className="img-box"
               src={require(`../../images/dovetail in writing desk-min.JPG`)}
-              alt="dovetail writing desk"
+              alt="A closeup of the hand cut joinery and exquisite detailed work on this yew and birdseye maple work table designed and made by Grillo & Co"
             ></img>
           </Link>
         </div>
@@ -100,7 +100,7 @@ class CarouselP extends Component {
             <img
               className="img-box"
               src={require(`../../images/Pepperwood-min.jpg`)}
-              alt="pepperwood dining table radial"
+              alt="Contemporary pedestal dining table designed by Grillo & Co made from american black walnut and exotic pepperwood burl arranged in a bookmatched, radial pattern to create a kaleidoscope effect. This custom piece of furniture won the Demarco Prize for contemporary art in furniture making."
             ></img>
           </Link>
         </div>
@@ -114,7 +114,7 @@ class CarouselP extends Component {
             <img
               className="img-box"
               src={require(`../../images/Dovetails and Inlays-min.jpeg`)}
-              alt="dovetails inlays entryway table"
+              alt="Close up view of the inlaid flower motif and hand made dovetail joinery on this floating top entryway table custom designed and built by Grillo & Co"
             ></img>
           </Link>
         </div>
@@ -127,7 +127,7 @@ class CarouselP extends Component {
           >
             <img
               src={require(`../../images/oak farmhouse desk-min.JPG`)}
-              alt="oak farmhouse desk"
+              alt="Contemporary Oak farmhouse desk designed and made by Grillo & Co features breadboard ends and wenge details."
             ></img>
             {/* <div className="text">
               <h2>Functional Art</h2>
@@ -148,7 +148,7 @@ class CarouselP extends Component {
             <img
               className="img-box"
               src={require(`../../images/walnut coffee table in the sun-min.JPG`)}
-              alt="walnut coffee table in the sun"
+              alt="Custom woodworking by Grillo & Co on this contemporary walnut coffee table."
             ></img>
             {/* <div className="text">
               <h2>Custom Designs</h2>
@@ -169,7 +169,7 @@ class CarouselP extends Component {
             <img
               className="img-box"
               src={require(`../../images/Parquetry Record Credenza-min.jpeg`)}
-              alt="parquetry record credenza"
+              alt="Custom record credenza made from mahogany, wenge, and dyed blue poplar with brass inlays. Features poplar and mahogany parquetry pattern on soft close doors. This stunning, contemparary cabinet was made and designed by Grillo & Co."
             ></img>
           </Link>
         </div>

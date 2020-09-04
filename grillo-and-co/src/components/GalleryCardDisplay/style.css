@@ -67,21 +67,21 @@ h4 {
 }
 @media (max-width: 1223px) {
   .gallery-card {
-    width: 100%;
+    width: 95%;
   }
   .gallery-image {
     width: 100%;
   }
   .modal-gallery {
     max-height: 80vh;
-    max-width: 100%;
+    max-width: 95%;
   }
   .picture-modal,
   .modal-body {
-    max-width: 100%;
+    max-width: 95%;
   }
   .gallery-image-modal {
-    max-width: 100%;
+    max-width: 95%;
   }
 }
 @media (max-width: 995px) {

@@ -4,6 +4,7 @@ import { Route } from "react-router";
 export default (
   <Route>
     <Route path="/" />
+    <Route path="/home" />
     <Route path="/aboutus" />
     <Route path="/gallery" />
     <Route path="/contactus" />

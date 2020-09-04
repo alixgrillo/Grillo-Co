@@ -63,6 +63,12 @@ class App extends Component {
               render={() => <Admin></Admin>}
             ></Route>
             <Route
+              path="/home"
+              render={() => (
+                <HomePage setActiveLink={this.setActiveLink}></HomePage>
+              )}
+            ></Route>
+            <Route
               path="/"
               render={() => (
                 <HomePage setActiveLink={this.setActiveLink}></HomePage>

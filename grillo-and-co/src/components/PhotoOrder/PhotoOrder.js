@@ -1,16 +1,7 @@
 import React, { Component } from "react";
-import {
-  Container,
-  Row,
-  FormGroup,
-  Label,
-  CustomInput,
-  Form,
-  Button,
-  Input,
-} from "reactstrap";
+import { FormGroup, Label, Form, Button, Input } from "reactstrap";
 import axios from "axios";
-import RLDD from "react-list-drag-and-drop/lib/RLDD";
+// import RLDD from "react-list-drag-and-drop/lib/RLDD";
 
 class PhotoOrder extends Component {
   constructor(props) {
@@ -120,7 +111,7 @@ class PhotoOrder extends Component {
   //   }
 
   render() {
-    const items = this.state.items;
+    //const items = this.state.items;
     return (
       <div>
         <Form>
@@ -129,6 +120,7 @@ class PhotoOrder extends Component {
               <Label for="title">{photo.title}</Label>
               <img
                 style={{ height: "100px", width: "100px" }}
+                alt=""
                 src={require(`../../images/${photo.photoInfo.name}`)}
               ></img>
               <Input

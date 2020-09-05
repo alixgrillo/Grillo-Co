@@ -105,29 +105,33 @@ const GalleryCard = (props) => {
           </FormGroup>
         </CardBody>
       </Card>
-      <Modal
-        isOpen={modal}
-        toggle={toggle}
-        className={className}
-        id="modal-gallery"
-      >
-        <ModalHeader toggle={toggle}>Update Information</ModalHeader>
-        <ModalBody>
-          <UploadPhotoForm
-            modal={true}
-            id={props.photo._id}
-            title={props.photo.title}
-            description={props.photo.description}
-            keyword={props.photo.keyword}
-          />
-        </ModalBody>
-        <ModalFooter>
-          {/* <Button color="primary" onClick={toggle}>Do Something</Button>{' '} */}
-          <Button color="secondary" onClick={toggle}>
-            Cancel
-          </Button>
-        </ModalFooter>
-      </Modal>
+      {this.props.width < 470 ? (
+        <Modal
+          isOpen={modal}
+          toggle={toggle}
+          className={className}
+          id="modal-gallery"
+        >
+          <ModalHeader toggle={toggle}>Update Information</ModalHeader>
+          <ModalBody>
+            <UploadPhotoForm
+              modal={true}
+              id={props.photo._id}
+              title={props.photo.title}
+              description={props.photo.description}
+              keyword={props.photo.keyword}
+            />
+          </ModalBody>
+          <ModalFooter>
+            {/* <Button color="primary" onClick={toggle}>Do Something</Button>{' '} */}
+            <Button color="secondary" onClick={toggle}>
+              Cancel
+            </Button>
+          </ModalFooter>
+        </Modal>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 };

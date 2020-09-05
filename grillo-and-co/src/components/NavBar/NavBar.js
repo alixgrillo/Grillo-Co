@@ -200,7 +200,7 @@ class NavbarComponent extends Component {
                       <Col lg={3} className="nav-link-contact">
                         <FontAwesome
                           name="mobile-alt"
-                          size="sm"
+                          size="lg"
                           style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
                         />
                         {"   "}
@@ -209,7 +209,7 @@ class NavbarComponent extends Component {
                         <a href="mailto:john@grilloandco.com">
                           <FontAwesome
                             name="envelope"
-                            size="sm"
+                            size="lg"
                             style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
                           />
                         </a>
@@ -365,16 +365,22 @@ class NavbarComponent extends Component {
                     <Col lg={3} className="nav-link-contact">
                       <FontAwesome
                         name="mobile-alt"
-                        size="sm"
-                        style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+                        size="lg"
+                        style={{
+                          textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
+                          fontSize: "16px",
+                        }}
                       />
                     </Col>
                     <Col lg={3} className="nav-link-contact">
                       <a href="mailto:john@grilloandco.com">
                         <FontAwesome
                           name="envelope"
-                          size="sm"
-                          style={{ textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)" }}
+                          size="lg"
+                          style={{
+                            textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
+                            fontSize: "16px",
+                          }}
                         />
                       </a>
                     </Col>

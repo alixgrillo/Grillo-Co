@@ -85,12 +85,13 @@ class AboutUs extends Component {
                 alt="Contemporary pedestal dining table designed by Grillo & Co made from american black walnut and exotic pepperwood burl arranged in a bookmatched, radial pattern to create a kaleidoscope effect. This custom piece of furniture won the Demarco Prize for contemporary art in furniture making."
               ></img>
             </Col>
-            <h3>Features</h3>
+            <h3 style={{ marginTop: "20px" }}>In the Media</h3>
             <ul>
               <li>
                 <a
                   href="https://chippendaleschool.com/2017/11/building-business-case-woodworking/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Building A Business Case For Woodworking, The Chippendale
                   International School of Furniture
@@ -100,6 +101,7 @@ class AboutUs extends Component {
                 <a
                   href="https://chippendaleschool.com/2018/03/contemporary-writing-desk/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   A Contemporary Writing Desk, The Chippendale International
                   School of Furniture

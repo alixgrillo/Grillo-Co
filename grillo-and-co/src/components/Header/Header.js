@@ -1,14 +1,10 @@
 import React from "react";
-import { Jumbotron, Container } from "reactstrap";
+import { Jumbotron } from "reactstrap";
 import "./style.css";
 
 const header = {
   // backgroundColor: "transparent",
   padding: "20px 0 0 0",
-};
-const h1 = {
-  color: "#2A110E",
-  textShadow: "none",
 };
 
 export const Header = (props) => {

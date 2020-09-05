@@ -4,11 +4,9 @@ import { Container, Col, Row, Button } from "reactstrap";
 import "./style.css";
 import CarouselP from "../../components/Carousel/Carousel";
 
-import axios from "axios";
-
 class HomePage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       content: [],
     };
@@ -18,9 +16,21 @@ class HomePage extends Component {
     // axios.get("/api/carousel").then((res) => {
     //   this.setState({ content: res.data });
     // });
+    // const script = document.createElement("script");
+    this.curator();
   }
-  handleContactClick() {
-    // this.props.setActiveLink("contact");
+
+  curator() {
+    var i,
+      e,
+      d = document,
+      s = "script";
+    i = d.createElement("script");
+    i.async = 1;
+    i.src =
+      "https://cdn.curator.io/published/1a3ca4fd-0348-4825-a8a3-5ee2cb704927.js";
+    e = d.getElementsByTagName(s)[0];
+    e.parentNode.insertBefore(i, e);
   }
 
   render() {
@@ -43,7 +53,10 @@ class HomePage extends Component {
               “things”: they are an expression of your personality and a unique
               way to tell your story.
             </p>
-            <Link to={`/contactus`} onClick={this.handleContactClick}>
+            <Link
+              to={`/contactus`}
+              onClick={() => this.props.setActiveLink("contact")}
+            >
               <Button className="contact-us-btn">
                 Contact Us to Discuss Your Project
               </Button>
@@ -90,7 +103,7 @@ class HomePage extends Component {
           </div>
           <div className="pages">
             {/* <Container className="container-block"> */}
-            <h2 style={{ marginBottom: "200px;" }}>Craftsman at Work</h2>
+            <h2 style={{ marginBottom: "20px" }}>Craftsman at Work</h2>
             <p style={{ textAlign: "center" }}>
               {" "}
               Take a peek inside our shop and see what we are up to!
@@ -102,7 +115,8 @@ class HomePage extends Component {
                 <a
                   href="https://curator.io"
                   target="_blank"
-                  class="crt-logo crt-tag"
+                  rel="noopener noreferrer"
+                  className="crt-logo crt-tag"
                 >
                   Powered by Curator.io
                 </a>

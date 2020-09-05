@@ -2,13 +2,13 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./style.css";
-import styled, { keyframes } from "styled-components";
-import { bounce } from "react-animations";
+// import styled, { keyframes } from "styled-components";
+// import { bounce } from "react-animations";
 var FontAwesome = require("react-fontawesome");
 
-const Bounce = styled.div`
-  animation: 2s ${keyframes`${bounce}`};
-`;
+// const Bounce = styled.div`
+//   animation: 2s ${keyframes`${bounce}`};
+// `;
 
 export const Footer = (props) => {
   return (
@@ -46,7 +46,10 @@ export const Footer = (props) => {
 
             <Col className="footer-text" md={3}>
               {/* <Bounce> */}
-              <Link to={`/contactus`}>
+              <Link
+                to={`/contactus`}
+                onClick={() => props.setActiveLink("contact")}
+              >
                 <FontAwesome
                   name="plus"
                   size="lg"

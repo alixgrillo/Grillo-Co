@@ -11,11 +11,16 @@ class Gallery extends Component {
     super();
     this.state = {
       galleryPhotos: [],
+      width: 0,
     };
   }
 
   componentDidMount() {
     this.getPhotos();
+    console.log(this.props);
+    this.setState({
+      width: this.props.width,
+    });
   }
 
   getPhotos = () => {
@@ -45,7 +50,10 @@ class Gallery extends Component {
           <Row>
             {this.state.galleryPhotos.map((photo, index) => (
               <Col lg={4} key={index}>
-                <GalleryCardDisplay photo={photo}></GalleryCardDisplay>
+                <GalleryCardDisplay
+                  photo={photo}
+                  width={this.props.width}
+                ></GalleryCardDisplay>
               </Col>
             ))}
           </Row>

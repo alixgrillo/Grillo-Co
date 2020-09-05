@@ -26,6 +26,22 @@ class App extends Component {
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener("resize", this.updateWindowDimensions);
+    if (
+      window.location.pathname.substring(1) !== "home" &&
+      window.location.pathname.substring(1) !== ""
+    ) {
+      switch (window.location.pathname.substring(1)) {
+        case "aboutus":
+          this.setState({ activeLink: "about" });
+          break;
+        case "contactus":
+          this.setState({ activeLink: "contact" });
+          break;
+        default:
+          this.setState({ activeLink: window.location.pathname.substring(1) });
+      }
+    }
+    console.log(`"${window.location.pathname.substring(1)}"`);
   }
 
   componentWillUnmount() {
@@ -41,46 +57,57 @@ class App extends Component {
   };
   render() {
     return (
-      <Router>
-        <div className="App">
-          <NavbarComponent
-            width={this.state.width}
-            activeLink={this.state.activeLink}
-            setActiveLink={this.setActiveLink}
-          ></NavbarComponent>
-          {/* <Header></Header> */}
-          <br></br>
-          {/* <img src={image}></img> */}
-          <Switch>
-            <Route path="/aboutus" render={() => <AboutUs></AboutUs>}></Route>
-            <Route path="/gallery" render={() => <Gallery></Gallery>}></Route>
-            <Route path="/contactus" render={() => <Contact></Contact>}></Route>
-            <Route path="/faq" render={() => <FAQ></FAQ>}></Route>
-            <Route path="/forsale" render={() => <ForSale></ForSale>}></Route>
-            <Route
-              exact
-              path="/admin8145"
-              render={() => <Admin></Admin>}
-            ></Route>
-            <Route
-              path="/home"
-              render={() => (
-                <HomePage setActiveLink={this.setActiveLink}></HomePage>
-              )}
-            ></Route>
-            <Route
-              path="/"
-              render={() => (
-                <HomePage setActiveLink={this.setActiveLink}></HomePage>
-              )}
-            ></Route>
-          </Switch>
-          <Footer />
-          {/* <MobileResponsive
+      <div>
+        <Router>
+          <div className="App">
+            <NavbarComponent
+              width={this.state.width}
+              activeLink={this.state.activeLink}
+              setActiveLink={this.setActiveLink}
+            ></NavbarComponent>
+            {/* <Header></Header> */}
+            <br></br>
+            {/* <img src={image}></img> */}
+            <Switch>
+              <Route path="/aboutus" render={() => <AboutUs></AboutUs>}></Route>
+              <Route
+                path="/gallery"
+                render={() => <Gallery width={this.state.width}></Gallery>}
+              ></Route>
+              <Route
+                path="/contactus"
+                render={() => <Contact></Contact>}
+              ></Route>
+              <Route
+                path="/faq"
+                render={() => <FAQ setActiveLink={this.setActiveLink}></FAQ>}
+              ></Route>
+              <Route path="/forsale" render={() => <ForSale></ForSale>}></Route>
+              <Route
+                exact
+                path="/admin8145"
+                render={() => <Admin></Admin>}
+              ></Route>
+              <Route
+                path="/home"
+                render={() => (
+                  <HomePage setActiveLink={this.setActiveLink}></HomePage>
+                )}
+              ></Route>
+              <Route
+                path="/"
+                render={() => (
+                  <HomePage setActiveLink={this.setActiveLink}></HomePage>
+                )}
+              ></Route>
+            </Switch>
+            <Footer setActiveLink={this.setActiveLink} />
+            {/* <MobileResponsive
             loadMobile={this.setMobileResponsive}
           ></MobileResponsive> */}
-        </div>
-      </Router>
+          </div>
+        </Router>
+      </div>
     );
   }
 }

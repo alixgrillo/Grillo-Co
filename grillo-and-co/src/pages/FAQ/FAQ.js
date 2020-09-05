@@ -92,7 +92,10 @@ class FAQ extends Component {
               styles that you like.{" "}
             </p>
           </Row>
-          <Link to={`/contactus`} onClick={this.handleContactClick}>
+          <Link
+            to={`/contactus`}
+            onClick={() => this.props.setActiveLink("contact")}
+          >
             <Button className="contact-us-btn">
               Contact Us to Discuss Your Project
             </Button>

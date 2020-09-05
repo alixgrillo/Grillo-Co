@@ -70,22 +70,25 @@ const GalleryCardDisplay = (props) => {
         </CardBody>
       </Card>
       {/* </Col> */}
-
-      <Modal className="picture-modal" isOpen={modal} toggle={toggle}>
-        <ModalBody>
-          <CardImg
-            className="gallery-image-modal"
-            src={require(`../../images/${props.photo.photoInfo.name}`)}
-            alt={props.photo.keyword}
-          />
-        </ModalBody>
-        <ModalFooter>
-          {/* <Button color="primary" onClick={toggle}>Do Something</Button>{' '} */}
-          <Button color="secondary" onClick={toggle}>
-            Close
-          </Button>
-        </ModalFooter>
-      </Modal>
+      {props.width > 470 ? (
+        <Modal className="picture-modal" isOpen={modal} toggle={toggle}>
+          <ModalBody>
+            <CardImg
+              className="gallery-image-modal"
+              src={require(`../../images/${props.photo.photoInfo.name}`)}
+              alt={props.photo.keyword}
+            />
+          </ModalBody>
+          <ModalFooter>
+            {/* <Button color="primary" onClick={toggle}>Do Something</Button>{' '} */}
+            <Button color="secondary" onClick={toggle}>
+              Close
+            </Button>
+          </ModalFooter>
+        </Modal>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 };

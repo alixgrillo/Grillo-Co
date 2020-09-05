@@ -76,7 +76,7 @@ class Admin extends Component {
           .sort((a, b) => (a.galleryOrder > b.galleryOrder ? 1 : -1)),
         loggedin: true,
         maxGalleryOrder:
-          response.data.length == 0
+          response.data.length === 0
             ? 0
             : response.data.reduce((prev, current) =>
                 prev.y > current.y ? prev : current

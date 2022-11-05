@@ -31,7 +31,7 @@ class Contact extends Component {
               <ContactForm></ContactForm>
             </Col>
             <Col className="map-div" lg={6}>
-              <h4>We are located in Bend, Oregon</h4>
+              <h4>We are located in Golden, CO</h4>
               <Map></Map>
             </Col>
           </Row>

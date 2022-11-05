@@ -24,13 +24,14 @@ class Gallery extends Component {
   }
 
   getPhotos = () => {
-    this.dbGet(`/api/adminSavedPhoto`).then((response) =>
+    this.dbGet(`/api/adminSavedPhoto`).then((response) => {
+      console.log(response);
       this.setState({
         galleryPhotos: response.data
           .filter((photo) => photo.inGallery)
           .sort((a, b) => (a.galleryOrder > b.galleryOrder ? 1 : -1)),
-      })
-    );
+      });
+    });
   };
 
   dbGet = async (url) => {

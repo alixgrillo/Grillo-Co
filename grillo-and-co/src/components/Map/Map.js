@@ -6,10 +6,10 @@ const google = process.env.REACT_APP_GOOGLEMAPS;
 class Map extends Component {
   static defaultProps = {
     center: {
-      lat: 44.080651,
-      lng: -121.2058151,
+      lat: 39.68461670708278,
+      lng: -105.27035338784644,
     },
-    zoom: 11,
+    zoom: 12,
   };
   componentDidMount() {}
 
@@ -24,8 +24,8 @@ class Map extends Component {
           yesIWantToUseGoogleMapApiInternals={true}
         >
           <AnyReactComponent
-            lat={44.080651}
-            lng={-121.2058151}
+            lat={39.68461670708278}
+            lng={-105.27035338784644}
             text="Grillo & Co"
           />
         </GoogleMapReact>

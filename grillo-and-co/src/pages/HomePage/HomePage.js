@@ -43,7 +43,7 @@ class HomePage extends Component {
               Grillo and Co creates beautiful bespoke furniture for your home or
               workplace. Operating almost entirely by commission, we custom
               design and hand make each piece to your exact specifications at
-              our workshop in Bend, Oregon. We will help you visualize your
+              our workshop in Golden, Colorado. We will help you visualize your
               ideas and, once you’re completely happy with the proposed design,
               we hand-craft your unique heirloom piece of furniture.
             </p>
@@ -89,7 +89,7 @@ class HomePage extends Component {
                     professional woodworking skills for the past 5 years. He is
                     a proud member of the Fine Furniture Guild and now creates
                     beautiful freestanding custom furniture form his workshop in
-                    Bend, Oregon.{" "}
+                    Golden, Colorado.{" "}
                   </p>
                   <p>
                     {" "}
@@ -133,7 +133,7 @@ class HomePage extends Component {
               </Col>
               <Col lg={6}>
                 <p>
-                  Based in Bend, OR we specialize in hand-made, custom wood
+                  Based in Golden, CO we specialize in hand-made, custom wood
                   furniture. We will help you visualise your ideas and, only
                   when you’re completely happy with the proposed design,
                   hand-craft your unique heirloom piece of furniture.

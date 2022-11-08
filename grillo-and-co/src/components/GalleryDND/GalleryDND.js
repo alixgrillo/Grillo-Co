@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import RLDD from "react-list-drag-and-drop/lib/RLDD";
+//import RLDD from "react-list-drag-and-drop/lib/RLDD";
 import "./style.css";
 
 class GalleryDND extends Component {
@@ -95,17 +95,17 @@ class GalleryDND extends Component {
     });
   }
 
-  render() {
-    const items = this.state.items;
-    return (
-      <RLDD
-        cssClasses="example"
-        items={items}
-        itemRenderer={this.itemRenderer}
-        onChange={this.handleRLDDChange}
-      />
-    );
-  }
+  // render() {
+  //   const items = this.state.items;
+  //   return (
+  //     // <RLDD
+  //     //   cssClasses="example"
+  //     //   items={items}
+  //     //   itemRenderer={this.itemRenderer}
+  //     //   onChange={this.handleRLDDChange}
+  //     // />
+  //   );
+  // }
 }
 
 export default GalleryDND;
